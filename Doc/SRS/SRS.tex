@@ -1,0 +1,219 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: Software Requirements Specification\\Title of Project}
+
+\author{Team 05, Q-aRt QTs
+		\\ Elton Schiott schiotek
+		\\ Emilio Hajj hajje
+		\\ Liam Duncan duncanla
+}
+
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Date 1 & 1.0 & Notes\\
+Date 2 & 1.1 & Notes\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+This document describes the requirements for artistic QR Code generating 
+software.  The template for the Software
+Requirements Specification (SRS) is a subset of the Volere
+template~\citep{RobertsonAndRobertson2012}.  
+
+\section{Project Drivers}
+
+\subsection{The Purpose of the Project}
+
+	\paragraph{}
+		
+		QR Code stamps are not popular, even though they were a source of much 
+		excitement when it was conceived that they could be used to more 
+		conveniently and attractively direct smartphone holders to internet 
+		addresses. QR codes are very practical but do take up much more space 
+		that a written domain and may ruin the balance of a graphic 
+		advertisement or notice. QR Codes may be more attractive to graphic 
+		designers if they could easily and attractively incorporate logos and 
+		colours, or additional information like the domain text itself to add 
+		multiple functions to one graphical article, through a simple tool that 
+		those without technical expertise could use. This open source project 
+		is an exciting chance to explore and contribute to new tools that could 
+		make this great technology more enticing and practical.
+
+\subsection{The Stakeholders}
+
+	\paragraph{}
+		Graphic designers are the preliminary target users of this product. 
+		They should be able to apply the elements output by this program to 
+		condense functions in their graphics and creatively present articles of 
+		the work with a practical twist if this project is successful.
+		
+		Those who view these graphics should be more likely to engage in the 
+		intention of the graphics.
+		
+		Those who commission the graphic (whether they themselves be the 
+		designer) should see a higher rate of views engaging their intentions 
+		for the graphics.
+		
+	
+\subsubsection{The Client}
+
+\subsubsection{The Customers}
+
+\subsubsection{Other Stakeholders}
+
+\subsection{Mandated Constraints}
+
+	The system should be an executable desktop program. It should run on a (at 
+	least one) Windows 10 computer. Other systems are not required but are 
+	expected to be applicable.
+
+\subsection{Naming Conventions and Terminology}
+
+		\paragraph{}
+		
+			There is no special terminology expected to be used, any incidental 
+			acronyms will be explained as they appear.
+
+\subsection{Relevant Facts and Assumptions}
+
+User characteristics should go under assumptions.
+
+\section{Functional Requirements}
+
+\subsection{The Scope of the Work and the Product}
+
+\subsubsection{The Context of the Work}
+
+\subsubsection{Work Partitioning}
+
+\subsubsection{Individual Product Use Cases}
+
+\subsection{Functional Requirements}
+
+	System must output either a Portable Network Graphic (.png) or Graphics 
+	Interchange Format (.gif) file. This will depend on whether the input is a 
+	JPEG or PNG file (output PNG) or a GIF file (output GIF). No other file 
+	formats will be accepted. 
+	
+	System must have a GUI allowing the user to input an alphanumeric string to 
+	encode into a QR code, and allowing the input an image if desired to create 
+	an artistic QR Code.
+	
+	System must generate an appropriate version QR code based on the number of 
+	characters in the user input text string (versions 1 to 40) and error 
+	correction level (L,M,Q, or H).
+	
+	System must not allow the user to enter a string that contains unsupported 
+	characters for the alphanumeric mode of QR encoding, and must prevent the 
+	user from entering a string of more than 4296 characters (the maximum 
+	capacity of the largest QR code, version 40-L).
+		
+	When a non compatible file is chosen, there must be a visible warning. The 
+	warning explains the allowed formats and only allows acceptance. The 
+	acceptance brings the GUI back to the original “browse for a file” state.
+	
+	The output must be recognizable as the original images. A viewer must be 
+	able to distinguish the QR code image that represents one input image from 
+	another QR code image which represents an input that is different. Here 
+	different refers to a significant difference in colour palate, distribution 
+	of high activity areas in the input image, and text which differs by more 
+	than two letters and significantly in format. Here high activity refers to 
+	a distinct logo, or a clearly visible object or subject in that area.
+	
+	
+
+\section{Non-functional Requirements}
+
+\subsection{Look and Feel Requirements}
+
+\subsection{Usability and Humanity Requirements}
+
+\subsection{Performance Requirements}
+
+\subsection{Operational and Environmental Requirements}
+
+\subsection{Maintainability and Support Requirements}
+
+\subsection{Security Requirements}
+
+\subsection{Cultural Requirements}
+
+\subsection{Legal Requirements}
+
+\subsection{Health and Safety Requirements}
+
+This section is not in the original Volere template, but health and safety are
+issues that should be considered for every engineering project.
+
+\section{Project Issues}
+
+\subsection{Open Issues}
+
+\subsection{Off-the-Shelf Solutions}
+
+\subsection{New Problems}
+
+\subsection{Tasks}
+
+\subsection{Migration to the New Product}
+
+\subsection{Risks}
+
+\subsection{Costs}
+
+\subsection{User Documentation and Training}
+
+\subsection{Waiting Room}
+
+\subsection{Ideas for Solutions}
+
+\bibliographystyle{plainnat}
+
+\bibliography{SRS}
+
+\newpage
+
+\section{Appendix}
+
+This section has been added to the Volere template.  This is where you can place
+additional information.
+
+\subsection{Symbolic Parameters}
+
+The definition of the requirements will likely call for SYMBOLIC\_CONSTANTS.
+Their values are defined in this section for easy maintenance.
+
+
+\end{document}
