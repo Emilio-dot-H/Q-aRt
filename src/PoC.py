@@ -7,15 +7,15 @@ def run():
 	print(MODE)
 	
 	version = 1
-	level = 'L'
+	level = 'Q'
 
 	inputString = input('Enter string to be converted : ')
 	
 	if any(i not in LEGALCHARS for i in inputString):
 		raise ValueError('Unsupported characters in input string')
 		
-	if (len(inputString)>25):
-		raise ValueError('String must be less than 25 characters')
+	if (len(inputString)>16):
+		raise ValueError('String must be less than 16 characters')
 	
 	charCount = binString(len(inputString), 9)	
 	
@@ -35,7 +35,7 @@ def run():
 	
 	print(data)
 	
-	reqBits = 19*8
+	reqBits = 13*8
 	
 	diff = reqBits-len(data)
 	
@@ -49,6 +49,16 @@ def run():
 	data += (8-(len(data)%8))*'0'
 	
 	#Still short, pad bytes
+	numPadBytes = (reqBits-len(data))/8
+	
+	for i in range(0, numPadBytes):
+		if (i%2 = 0):
+			data += '11101100' #specific bytes designated as pad bytes
+		else:
+			data += '00010001'
+	#raw data encoding complete
+	
+	#begin error correction encoding
 	
 def padBits(inString, num):
 	
