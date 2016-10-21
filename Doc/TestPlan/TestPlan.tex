@@ -57,18 +57,6 @@ Date 2 & 1.1 & Notes\\
 	be used as a reference during the implementation of the software, and 
 	during testing.
 \subsection{Scope}
-	The software under development for this project, Q-aRt Code, can be 
-	decomposed into modules. This includes modules to:
-	\begin{itemize}  
-		\item Encode binary strings from the input data .
-		\item Generate error correction codewords from the binary strings.
-		\item Structure data and error correction binary strings, including 
-		interleaving.
-		\item Create a matrix using the generated data according to QR code 
-		standards.
-		\item Combine generated QR Code with input image to create artistic QR 
-		code.
-	\end{itemize}
 	The majority of the project is encoding binary strings from the input data, 
 	therefore, the scope of the testing for this software will largely be 
 	ensuring correctness of these generated strings, but also includes 
@@ -108,13 +96,32 @@ Term2 & Definition2\\
 \section{Plan}
 	
 \subsection{Software Description}
-
+	The software under development for this project, Q-aRt Code, is a QR code 
+	generator that has the added functionality of creating artistic QR codes. 
+	The modular decomposition of the software is as follows:
+	\begin{itemize}  
+		\item Encode binary strings from the input data .
+		\item Generate error correction codewords from the binary strings.
+		\item Structure data and error correction binary strings, including 
+		interleaving.
+		\item Create a matrix using the generated data according to QR code 
+		standards.
+		\item Combine generated QR Code with input image to create artistic QR 
+		code.
+	\end{itemize}
 \subsection{Test Team}
-
+	Each member of the test team will be responsible for both the creation of 
+	tests and their execution. The members of the test team are as follows:
+	\begin{itemize}
+		\item Elton Schiott
+		\item Emilio Hajj
+		\item Liam Duncan
+	\end{itemize}
 \subsection{Automated Testing Approach}
 
 \subsection{Testing Tools}
-
+	Unit testing will be conducted using the Python unittest unit testing 
+	framework.
 \subsection{Testing Schedule}
 		
 See Gantt Chart at the following url ...
