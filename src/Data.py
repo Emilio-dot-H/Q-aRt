@@ -45,5 +45,19 @@ def getDataBits(version, ecl, mode, inputString):
 def binString(data, length):
     pass
 
+## @brief Method to determine the appropriate mode and version for a QR code.
+#  @author Elton Kjeld Schiott
+#  @details Method accepts three parameters, and determines the appropriate version
+#  and mode, given a desired version and error correction level. If the given
+#  version is too small to hold the data, an appropriate one is selected. The mode
+#  is selected based on compatible characters in the input string.
+#  @param version Integer between 1 and 40 that specifies the desired size of the QR code. 
+#  @param ecl Accepts one of four values: 'L', 'M', 'Q', 'H' that specify the
+#  level of error correction to be encoded.
+#  @param inputString Accepts an input string to be encoded into data bits for a
+#  QR code.
+#  @return (version, mode), appropriate version and encoding mode, respectively.
+def analyse(version, ecl, inputString)
+    pass
 
 def padBytes(data)
