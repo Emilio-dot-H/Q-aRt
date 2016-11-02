@@ -1,5 +1,5 @@
 # Data Encoding Module
-# Author: Elton Schiott
+# Author: Elton Kjeld Schiott
 # This class encodes the data bits for a QR code given an input string, version,
 # error correction level, and mode.
 ## @mainpage Mainpage
@@ -42,6 +42,7 @@ def getDataBits(version, ecl, mode, inputString):
 #  @param data Accepts an integer or string to be converted.
 #  @param length Accepts an integer that specifies the length of string to be
 #  generated.
+#  @return a converted binary string of appropriate length.
 def binString(data, length):
     pass
 

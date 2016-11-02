@@ -1,5 +1,5 @@
 # Error Correction Codeword Module
-# Author: Elton Schiott
+# Author: Elton Kjeld Schiott
 # This class generates error correction codewords for a given version, error correction
 # level and data string.
 ## @mainpage Mainpage
