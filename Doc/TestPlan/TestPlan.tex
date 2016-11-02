@@ -179,7 +179,7 @@ Type: Functional, Dynamic.
 					
 Initial State: Output on hand.
 					
-Input: Display/View of QR Code png.
+Input: Display/View of QR Code png, #808080 grey square image.
 					
 Output: No Output, displays error message.
 					
@@ -197,46 +197,57 @@ Type: Functional, Dynamic.
 					
 Initial State: Start GUI.
 					
-Input: Display/View of QR Code png.
+Input: Characters in GUI text box, no image.
 					
 Output: No Output, displays error message.
 					
-How test will be performed: With a QR Scanning Application.
+How test will be performed: Pressing "Create" in start GUI.
 
+\item{Attempt to paste chars not within the accepted range: in this case Kanji, which the system will not handle\\}
+
+Type: Functional, Dynamic.
+					
+Initial State: Start GUI.
+					
+Input: Characters in GUI text box, no image.
+					
+Output: No Output, displays error message.
+					
+How test will be performed: Pressing "Create" in start GUI.
 
 /end{enumerate}
 
 \subsection{Tests for Nonfunctional Requirements}
 
-\subsubsection{Area of Testing1}
+\subsubsection{Aesthetic Tests}
 		
 \paragraph{Title for Test}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{Colour Fidelity\\}
 
-Type: 
+Type: Non-Functional, Dynamic.
 					
-Initial State: 
+Initial State: Start GUI.
 					
-Input/Condition: 
+Input/Condition: Standard URL, unspecific single colour square image.
 					
-Output/Result: 
+Output/Result: QR code with much of its content the same colour as the square image.
 					
-How test will be performed: 
+How test will be performed: An on-screen hex eyedrop tool will be used to compare the input colour image with elements of the output image.
 					
-\item{test-id2\\}
+\item{Visual Text Legibility\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Non-Functional, Dynamic, Manual.
 					
-Initial State: 
+Initial State: Output on hand.
 					
-Input: 
+Input: Display/View of QR Code png, square image of some text.
 					
-Output: 
+Output: QR code with "artistic" text appearance.
 					
-How test will be performed: 
+How test will be performed: Member visually inspects output PNG with text chosen by another member, writes down the text they see and compares it to entered text.
 
 \end{enumerate}
 
