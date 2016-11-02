@@ -70,8 +70,7 @@ Date 2 & 1.1 & Notes\\
 \toprule
 \textbf{Abbreviation} & \textbf{Definition} \\
 \midrule
-Abbreviation1 & Definition1\\
-Abbreviation2 & Definition2\\
+QR Code & Quick Response Code\\
 \bottomrule
 \end{tabularx}
 
@@ -130,41 +129,82 @@ See Gantt Chart at the following url ...
 	
 \subsection{Tests for Functional Requirements}
 
-\subsubsection{Area of Testing1}
+\subsubsection{Functionality and Fidelity of QR Encoder}
 		
-\paragraph{Title for Test}
+\paragraph{QR Scanning App}
 
 \begin{enumerate}
 
-\item{test-id1\\}
+\item{Retrieve URL\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Functional, Dynamic.
 					
-Initial State: 
+Initial State: Output on hand.
 					
-Input: 
+Input: Display/View of QR Code png.
 					
-Output: 
+Output: Originally encoded URL.
 					
-How test will be performed: 
+How test will be performed: With a QR Scanning Application.
 					
-\item{test-id2\\}
+\item{Max. Character URL Retrieval \\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Functional, Dynamic.
+			
+Initial State: Output on hand.
 					
-Initial State: 
+Input: Display/View of QR Code png.
 					
-Input: 
+Output: Originally encoded URL with the maximum number of character.  
 					
-Output: 
+How test will be performed: With a QR Scanning Application.
+
+
+\item{Empty String\\}
+
+Type: Functional, Dynamic.
 					
-How test will be performed: 
+Initial State: Output on hand.
+					
+Input: Display/View of QR Code png. 
+					
+Output: No Output, displays "Empty String" message.
+					
+How test will be performed: With a QR Scanning Application.
+
+
+\item{URL with greater than max. characters\\}
+
+Type: Functional, Dynamic.
+					
+Initial State: Output on hand.
+					
+Input: Display/View of QR Code png.
+					
+Output: No Output, displays error message.
+					
+How test will be performed: With a QR Scanning Application.
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{Input Handling}
 
-...
+\begin{enumerate}
+
+\item{ASCII not compatible with URL\\}
+
+Type: Functional, Dynamic.
+					
+Initial State: Start GUI.
+					
+Input: Display/View of QR Code png.
+					
+Output: No Output, displays error message.
+					
+How test will be performed: With a QR Scanning Application.
+
+
+/end{enumerate}
 
 \subsection{Tests for Nonfunctional Requirements}
 
@@ -200,7 +240,7 @@ How test will be performed:
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{}
 
 ...
 
