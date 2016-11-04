@@ -31,13 +31,14 @@
 \listoftables
 \listoffigures
 
+No figures at this time.
+
 \begin{table}[bp]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+03/11/16 & 1.0 & System and Proof of Concept tests present. Unit testing to be determined after design phase.\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -70,7 +71,10 @@ Date 2 & 1.1 & Notes\\
 \toprule
 \textbf{Abbreviation} & \textbf{Definition} \\
 \midrule
-QR Code & Quick Response Code\\
+QR Code & Quick Response Code (image-based data encoding)\\
+URL & Uniform Resource Locator (web address)\\
+GUI & Graphical User Interface\\
+PNG & Portable Network Graphic (most ubiquitous digital image format)\\
 \bottomrule
 \end{tabularx}
 
@@ -83,8 +87,7 @@ QR Code & Quick Response Code\\
 \toprule
 \textbf{Term} & \textbf{Definition}\\
 \midrule
-Term1 & Definition1\\
-Term2 & Definition2\\
+No Outstanding Terms & N/A\\
 \bottomrule
 \end{tabularx}
 
@@ -117,13 +120,14 @@ Term2 & Definition2\\
 		\item Liam Duncan
 	\end{itemize}
 \subsection{Automated Testing Approach}
+	All automated testing will be done on the modular level. Since the system is restricted from GUI through to external scanner, display colour tool or manual interpretation by a person will be used for system testing.
 
 \subsection{Testing Tools}
-	Unit testing will be conducted using the Python unittest unit testing 
-	framework.
+	Unit testing will be conducted using the Python unittest unit testing framework.
 \subsection{Testing Schedule}
 		
-See Gantt Chart at the following url ...
+See Gantt Chart at the following url:
+\url{https://gitlab.cas.mcmaster.ca/schiotek/Q-aRt_Code/blob/master/ProjectSchedule/GanttChartQ.gan}
 
 \section{System Test Description}
 	
@@ -215,13 +219,11 @@ Output: No Output, displays error message.
 					
 How test will be performed: Pressing "Create" in start GUI.
 
-\end{enumerate}
+/end{enumerate}
 
 \subsection{Tests for Nonfunctional Requirements}
 
-\subsubsection{Aesthetic Tests}
-		
-\paragraph{Title for Test}
+\subsubsection{Visual and Aesthetic Tests}
 
 \begin{enumerate}
 
@@ -251,56 +253,73 @@ How test will be performed: Member visually inspects output PNG with text chosen
 
 \end{enumerate}
 
-\subsubsection{}
+\subsubsection{Performance}
 
-...
+item{Reasonable speed\\}
 
-\section{Tests for Proof of Concept}
-
-\subsection{Area of Testing1}
-		
-\paragraph{Title for Test}
-
-\begin{enumerate}
-
-\item{test-id1\\}
-
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Non-Functional, Dynamic, Manual.
 					
-Initial State: 
+Initial State: Start GUI 
 					
-Input: 
+Input: Short URL, \#808080 grey square image.
 					
-Output: 
+Output: QR code image with "artistic" text integrated.
 					
-How test will be performed: 
-					
-\item{test-id2\\}
-
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
+How test will be performed: "create" button pressed, android stopwatch manually started. PNG output, stopwatch manually stopped.
 
 \end{enumerate}
 
-\subsection{Area of Testing2}
+\section{Tests for Proof of Concept}
 
-...
+\subsection{Functional Testing}
 
+\begin{enumerate}
+
+\item{Maximum String Test\\}
+
+Type: Functional, Dynamic
+					
+Initial State: Python Shell.
+					
+Input: Max char (13 for the Proof of Concept specifically) input string as shell argument.
+					
+Output: QR code PNG image.
+					
+How test will be performed: Max char string will be input on shell prompt, and the output PNG will be tested with an external scanning app to retrieve the original string.
+					
+\item{Empty String\\}
+
+Type: Functional, Dynamic
+					
+Initial State: Python Shell.
+					
+Input: Empty string input string as shell argument.
+					
+Output: Error message.
+					
+How test will be performed: Empty string will be input on shell prompt, and no output should be created, with a warning message.
+
+\end{enumerate}
+
+\subsection{Non-Functional Testing}
+
+The Proof of Concept is purely focused on functional requirement testing.
 	
 \section{Comparison to Existing Implementation}	
+
+A comparison of system tests to the existing implementation is immediately availible since we can input identical strings and images, and analyze the output files with the same set of QR Code scanners.
 				
 \section{Unit Testing Plan}
+
+Unit Testing Plan pending modular design.
 		
 \subsection{Unit testing of internal functions}
+
+Unit Testing Plan pending modular design.
 		
-\subsection{Unit testing of output files}		
+\subsection{Unit testing of output files}
+
+Unit Testing Plan pending modular design.		
 
 \bibliographystyle{plainnat}
 
@@ -310,15 +329,10 @@ How test will be performed:
 
 \section{Appendix}
 
-This is where you can place additional information.
+No additional information to show.
 
 \subsection{Symbolic Parameters}
 
-The definition of the test cases will call for SYMBOLIC\_CONSTANTS.
-Their values are defined in this section for easy maintenance.
-
-\subsection{Usability Survey Questions?}
-
-This is a section that would be appropriate for some teams.
+None yet used.
 
 \end{document}
