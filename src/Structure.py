@@ -28,7 +28,7 @@
 #  representing blocks.
 #  @param errorCodewords Accepts an array containing error correction codewords.
 #  @return Final binary string representing the data.
-def getFinalData:
+def getFinalData(version, ecl, dataCodewords, errorCodewords):
     pass
 
 ## @brief Method to interleave data codewords.
@@ -41,7 +41,7 @@ def getFinalData:
 #  @param dataCodewords Accepts an array containing arrays of data codewords
 #  representing blocks.
 #  @return Returns an array containing the interleaved data codewords.
-def interleaveData:
+def interleaveData(version, ecl, dataCodewords):
     pass
 
 ## @brief Method to interleave error codewords.
@@ -50,5 +50,5 @@ def interleaveData:
 #  @details Method accepts one parameter.
 #  @param errorCodewords Accepts an array containing error correction codewords.
 #  @return Returns an array containing the interleaved data codewords.
-def interleaveError:
+def interleaveError(errorCodewords):
     pass
