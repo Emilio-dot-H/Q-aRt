@@ -14,7 +14,7 @@
 # @details This class interleaves the generated data codewords and error correction
 # codewords by QR code standards before the data is placed in the matrix.
 # @code
-#   data = Data.getDataBits(5,'H',ALPHANUMERIC, inputString)
+#   finalData = Structure.getFinalData(30, 'M', dataCodewords, errorCodewords)
 # @endcode
 
 ## @brief Method to structure final data.
