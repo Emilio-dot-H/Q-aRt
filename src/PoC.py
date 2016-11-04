@@ -15,6 +15,10 @@ def getDataBits():
 	if (len(inputString)>13):
 		raise ValueError('String must be less than 13 characters')
 	
+	if (len(inputString) == 0):
+		raise ValueError('String must be at least 1 character')
+	
+	
 	charCount = binString(len(inputString), 9)	
 	
 	print(charCount)
