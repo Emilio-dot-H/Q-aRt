@@ -1,0 +1,54 @@
+# Data Structuring Module
+# Author: Elton Kjeld Schiott
+# This class handles interleaving of data codewords and error correction
+# codewords.
+## @mainpage Mainpage
+#
+##
+# @file Structure.py
+# @title Structure
+# @author Elton Kjeld Schiott
+# @date 4/11/2016
+# @brief This class handles interleaving of data codewords and error correction
+# codewords. 
+# @details This class interleaves the generated data codewords and error correction
+# codewords by QR code standards before the data is placed in the matrix.
+# @code
+#   data = Data.getDataBits(5,'H',ALPHANUMERIC, inputString)
+# @endcode
+
+## @brief Method to structure final data.
+#  @author Elton Kjeld Schiott
+#  @date 4/11/2016
+#  @details Method accepts four parameters. 
+#  @param version Integer between 1 and 40 that specifies the size of the QR code.
+#  @param ecl Accepts one of four values: 'L', 'M', 'Q', 'H' that specify the
+#  level of error correction to be encoded.
+#  @param dataCodewords Accepts an array containing arrays of data codewords
+#  representing blocks.
+#  @param errorCodewords Accepts an array containing error correction codewords.
+#  @return Final binary string representing the data.
+def getFinalData:
+    pass
+
+## @brief Method to interleave data codewords.
+#  @author Elton Kjeld Schiott
+#  @date 4/11/2016
+#  @details Method accepts three parameters. 
+#  @param version Integer between 1 and 40 that specifies the size of the QR code.
+#  @param ecl Accepts one of four values: 'L', 'M', 'Q', 'H' that specify the
+#  level of error correction to be encoded.
+#  @param dataCodewords Accepts an array containing arrays of data codewords
+#  representing blocks.
+#  @return Returns an array containing the interleaved data codewords.
+def interleaveData:
+    pass
+
+## @brief Method to interleave error codewords.
+#  @author Elton Kjeld Schiott
+#  @date 4/11/2016
+#  @details Method accepts one parameter.
+#  @param errorCodewords Accepts an array containing error correction codewords.
+#  @return Returns an array containing the interleaved data codewords.
+def interleaveError:
+    pass
