@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Gantt_Q-aRt" company="Q-aRt Code" webLink="http://" view-date="2016-09-11" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.8.1" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Gantt_Q-aRt" company="Q-aRt Code" webLink="http://" view-date="2016-10-02" view-index="0" gantt-divider-location="448" resource-divider-location="300" version="2.8.1" locale="en_US">
     <description><![CDATA[This is a gantt chart]]></description>
     <view zooming-state="default:4" id="gantt-chart">
-        <field id="tpd3" name="Name" width="199" order="0"/>
-        <field id="tpd4" name="Begin date" width="75" order="1"/>
-        <field id="tpd5" name="End date" width="75" order="2"/>
-        <option id="color.recent"><![CDATA[#ffff00 #ffff33 #ffff99 #00cc00 #339900 #33ff33 #cc0000 #ff6666 #f4f4f4 #ff0000]]></option>
+        <field id="tpd3" name="Name" width="218" order="0"/>
+        <field id="tpd4" name="Begin date" width="106" order="1"/>
+        <field id="tpd5" name="End date" width="105" order="2"/>
+        <option id="color.recent"><![CDATA[#cc0000 #6600cc #00ffff #000066 #ffff00 #ffff33 #ffff99 #00cc00 #339900 #33ff33]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="210" order="0"/>
@@ -35,9 +35,8 @@
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
         <task id="0" name="MILESTONE I" color="#00cccc" meeting="true" start="2016-10-03" duration="0" complete="0" expand="true">
-            <task id="4" name="Milestone I" color="#3366ff" meeting="false" start="2016-10-03" duration="6" complete="0" expand="true">
+            <task id="4" name="Milestone I" color="#3366ff" meeting="false" start="2016-10-03" duration="5" complete="0" expand="true">
                 <task id="8" name="Establish Requirements" color="#00cccc" meeting="false" start="2016-10-03" duration="5" complete="0" expand="true"/>
-                <task id="10" name="Sync &amp; Compile GitHub Code" color="#8cb6ce" meeting="false" start="2016-10-04" duration="5" complete="0" expand="true"/>
             </task>
         </task>
         <task id="12" name="MILESTONE II" color="#ff6666" meeting="true" start="2016-10-11" duration="0" complete="0" expand="true">
@@ -50,21 +49,38 @@
                 </task>
             </task>
         </task>
-        <task id="41" name="MILESTONE III" color="#33ff33" meeting="true" start="2016-10-17" duration="0" complete="0" expand="true">
-            <task id="45" name="Milestone III" color="#33ff33" meeting="false" start="2016-10-17" duration="17" complete="0" expand="true">
-                <task id="50" name="Deeper Coding" color="#00cc00" meeting="false" start="2016-10-24" duration="5" complete="0" expand="true">
-                    <task id="54" name="Expand API" color="#339900" meeting="false" start="2016-10-24" duration="4" complete="0" expand="true"/>
-                    <task id="58" name="Establish GUI" color="#339900" meeting="false" start="2016-10-25" duration="4" complete="0" expand="true"/>
-                    <task id="61" name="Establish New Methods + Functions" color="#339900" meeting="false" start="2016-10-25" duration="4" complete="0" expand="true"/>
+        <task id="41" name="MILESTONE III" color="#33ff33" meeting="true" start="2016-11-07" duration="0" complete="0" expand="true">
+            <task id="45" name="Milestone III" color="#33ff33" meeting="false" start="2016-11-07" duration="7" complete="0" expand="true">
+                <task id="50" name="Design Document: Module Guide" color="#00cc00" meeting="false" start="2016-11-07" duration="7" complete="0" expand="true">
+                    <task id="54" name="Intro + Overview (summarize SRS + MIS)" color="#339900" meeting="false" start="2016-11-07" duration="4" complete="0" expand="true"/>
+                    <task id="61" name="Establish New Methods + Functions" color="#339900" meeting="false" start="2016-11-10" duration="4" complete="0" expand="true"/>
                 </task>
-                <task id="62" name="Design Documentation" color="#00cc00" meeting="false" start="2016-10-17" duration="17" complete="0" expand="true"/>
+                <task id="62" name="Design Documentation" color="#00cc00" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
             </task>
         </task>
-        <task id="63" name="MILESTONE IV" color="#ffff99" meeting="true" start="2016-11-09" duration="0" complete="0" expand="true">
-            <task id="67" name="Milestone IV" color="#ffff33" meeting="false" start="2016-11-09" duration="16" complete="0" expand="true">
-                <task id="70" name="Finalize Coding" color="#ffff00" meeting="false" start="2016-11-09" duration="7" complete="0" expand="true"/>
-                <task id="71" name="Prep for Demonstration" color="#ffff00" meeting="false" start="2016-11-10" duration="10" complete="0" expand="true"/>
-                <task id="72" name="Finalize Documentation" color="#ffff00" meeting="false" start="2016-11-10" duration="15" complete="0" expand="true"/>
+        <task id="76" name="MILESTONE IV" color="#000066" meeting="true" start="2016-11-11" duration="0" complete="0" expand="true">
+            <task id="91" name="Proof Of Concept TESTING" color="#000066" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true">
+                <task id="94" name="Func. Test - Max String Test" color="#000066" meeting="false" start="2016-11-11" duration="2" complete="0" expand="true"/>
+                <task id="97" name="Func. Test -  Empty String Test" color="#000066" meeting="false" start="2016-11-11" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="110" name="Func. Req. TESTING" color="#00ffff" meeting="false" start="2016-11-14" duration="2" complete="0" expand="true">
+                <task id="112" name="QR Scanning App: Retrieve URL" color="#00ffff" meeting="false" start="2016-11-14" duration="1" complete="0" expand="true"/>
+                <task id="113" name="QR Scanning App: Max. Char. URL" color="#00ffff" meeting="false" start="2016-11-14" duration="1" complete="0" expand="true"/>
+                <task id="114" name="QR Scanning App: Empty String" color="#00ffff" meeting="false" start="2016-11-15" duration="1" complete="0" expand="true"/>
+                <task id="115" name="QR Scanning App: Greater than Max char. URL" color="#00ffff" meeting="false" start="2016-11-15" duration="1" complete="0" expand="true"/>
+                <task id="130" name="Inp. Handling: non-compatible ASCII" color="#00ffff" meeting="false" start="2016-11-15" duration="1" complete="0" expand="true"/>
+                <task id="131" name="Inp. Handling: non-comp. pasted char." color="#00ffff" meeting="false" start="2016-11-15" duration="1" complete="0" expand="true"/>
+            </task>
+            <task id="139" name="Nonfunc. Req. TESTING" color="#6600cc" meeting="false" start="2016-11-18" duration="4" complete="0" expand="true">
+                <task id="142" name="Visual + Aesthetic Testing" color="#6600cc" meeting="false" start="2016-11-18" duration="3" complete="0" expand="true"/>
+                <task id="143" name="Performance Testing" color="#6600cc" meeting="false" start="2016-11-21" duration="3" complete="0" expand="true"/>
+            </task>
+        </task>
+        <task id="63" name="MILESTONE V" color="#cc0000" meeting="true" start="2016-11-21" duration="0" complete="0" expand="true">
+            <task id="67" name="Milestone IV" color="#ffff33" meeting="false" start="2016-11-21" duration="13" complete="0" expand="true">
+                <task id="70" name="Finalize Coding" color="#ffff00" meeting="false" start="2016-11-21" duration="3" complete="0" expand="true"/>
+                <task id="71" name="Prep for Demonstration" color="#ffff00" meeting="false" start="2016-11-24" duration="3" complete="0" expand="true"/>
+                <task id="72" name="Finalize Documentation" color="#ffff00" meeting="false" start="2016-11-28" duration="8" complete="0" expand="true"/>
             </task>
         </task>
     </tasks>
@@ -76,7 +92,6 @@
     <allocations>
         <allocation task-id="8" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="15.0"/>
         <allocation task-id="20" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="20.0"/>
-        <allocation task-id="10" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="20.0"/>
         <allocation task-id="33" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
         <allocation task-id="38" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="20.0"/>
         <allocation task-id="40" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="20.0"/>
@@ -85,28 +100,38 @@
         <allocation task-id="70" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="15.0"/>
         <allocation task-id="71" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="20.0"/>
         <allocation task-id="72" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="30.0"/>
+        <allocation task-id="54" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="15.0"/>
+        <allocation task-id="94" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
+        <allocation task-id="112" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="15.0"/>
+        <allocation task-id="114" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
+        <allocation task-id="142" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
+        <allocation task-id="143" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="8" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="15.0"/>
         <allocation task-id="20" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="10" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="33" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
         <allocation task-id="38" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="40" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="54" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="25.0"/>
         <allocation task-id="62" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
         <allocation task-id="70" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="15.0"/>
         <allocation task-id="71" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="72" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="30.0"/>
+        <allocation task-id="130" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
+        <allocation task-id="142" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
+        <allocation task-id="143" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="20.0"/>
         <allocation task-id="8" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="15.0"/>
         <allocation task-id="20" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="10" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="33" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
         <allocation task-id="38" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="40" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="58" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="25.0"/>
         <allocation task-id="62" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
         <allocation task-id="70" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="15.0"/>
         <allocation task-id="71" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="72" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="30.0"/>
+        <allocation task-id="97" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
+        <allocation task-id="113" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="15.0"/>
+        <allocation task-id="131" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
+        <allocation task-id="142" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
+        <allocation task-id="143" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
     </allocations>
     <vacations/>
     <previous/>
