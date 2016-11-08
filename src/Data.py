@@ -49,9 +49,8 @@ def binString(data, length):
 ## @brief Method to determine the appropriate mode and version for a QR code.
 #  @author Elton Kjeld Schiott
 #  @details Method accepts three parameters, and determines the appropriate version
-#  and mode, given a desired version and error correction level. If the given
-#  version is too small to hold the data, an appropriate one is selected. The mode
-#  is selected based on compatible characters in the input string.
+#  given a desired version and error correction level. If the given
+#  version is too small to hold the data, an appropriate one is selected.
 #  @param version Integer between 1 and 40 that specifies the desired size of the QR code. 
 #  @param pErrorCorrectionLevel Accepts one of four values: 'L', 'M', 'Q', 'H' that specify the
 #  level of error correction to be encoded.
@@ -67,5 +66,21 @@ def analyse(pVersion, pErrorCorrectionLevel, pInputString)
             break
  
     return pVersion
+
+## @brief Method to encode the Input String as byte code
+#  @author Liam Duncan
+#  @details The URL or input string entered is assumed to be of 'byte' mode. Each
+#  char in the input string is encoded into a byte code.
+#  @param inputString Accepts an input string to be encoded into data bits for a
+#  QR code.
+#  @return byte code string representing input string/url
+def byteEncoding(pInputString):
+    lEncodedInputString = ''
+    for i in pInputString:
+        #encode each char as a binary byte
+        element = bin(ord(i.encode('iso-8859-1')))[2:]
+        element = '0'*(8-len(element)) + element
+        lEncodedInputString += element
+    return lEncodedInputString
 
 def padBytes(data)
