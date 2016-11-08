@@ -59,9 +59,9 @@ def binString(data, length):
 #  QR code.
 #  @return Appropriate version
 def analyse(pVersion, pErrorCorrectionLevel, pInputString)
-    lInputStringLength = len(pInputString)
+    lInputStringLength = len(pInputString) #the character count of the input
     for i in range(40):
-        #compares look-up table char caps to 
+        #compares look-up table char caps to determine the appropriate size of the QR Code
         if char_cap[pErrorCorrectionLevel][i]['byte'] > l:
             pVersion = i+1 if i+1 > pVersion else pVersion
             break
