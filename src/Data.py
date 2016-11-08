@@ -53,12 +53,19 @@ def binString(data, length):
 #  version is too small to hold the data, an appropriate one is selected. The mode
 #  is selected based on compatible characters in the input string.
 #  @param version Integer between 1 and 40 that specifies the desired size of the QR code. 
-#  @param ecl Accepts one of four values: 'L', 'M', 'Q', 'H' that specify the
+#  @param pErrorCorrectionLevel Accepts one of four values: 'L', 'M', 'Q', 'H' that specify the
 #  level of error correction to be encoded.
 #  @param inputString Accepts an input string to be encoded into data bits for a
 #  QR code.
-#  @return (version, mode), appropriate version and encoding mode, respectively.
-def analyse(version, ecl, inputString)
-    pass
+#  @return Appropriate version
+def analyse(pVersion, pErrorCorrectionLevel, pInputString)
+    lInputStringLength = len(pInputString)
+    for i in range(40):
+        #compares look-up table char caps to 
+        if char_cap[pErrorCorrectionLevel][i]['byte'] > l:
+            pVersion = i+1 if i+1 > pVersion else pVersion
+            break
+ 
+    return pVersion
 
 def padBytes(data)
