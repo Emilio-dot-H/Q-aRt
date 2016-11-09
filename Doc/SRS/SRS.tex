@@ -38,6 +38,7 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 2016/10/11 & 1.0 & Revision 0\\
+2016/11/09 & 1.1 & Revision 1\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -103,18 +104,18 @@ template~\citep{RobertsonAndRobertson2012}.
 
 \subsection{Naming Conventions and Terminology}
 
-		\paragraph{}
+		\paragraph{QR Code}
 		
-			QR Code: Similar to a barcode, a machine readable array of black 
+			 Similar to a barcode, a machine readable array of black 
 			and white squares typically used to store URLs.
-			\paragraph{}
-			URL: Uniform Resource Locator. An address to a resource on the 
+			\paragraph{URL}
+			 Uniform Resource Locator. An address to a resource on the 
 			internet.
-			\paragraph{}
-			Version: The size of a QR code, version 1 being 21 by 21 pixels, up 
+			\paragraph{Version}
+			 The size of a QR code, version 1 being 21 by 21 pixels, up 
 			to version 40 which has 177 by 177 pixels.
-			\paragraph{}
-			Error Correction Level: A process that encodes bytes into the QR 
+			\paragraph{Error Correction Level}
+			 A process that encodes bytes into the QR 
 			code that allow the reader to determine if the data was read 
 			correctly, and can be used to correct any errors that prevented it 
 			from being read correctly.
@@ -158,19 +159,16 @@ template~\citep{RobertsonAndRobertson2012}.
 \subsection{Functional Requirements}
 
 	\paragraph{R1}
-	System must accept image files of the format JPEG, PNG, or GIF.
+	System must accept image files of the format JPEG or PNG.
 	\paragraph{R2}
-	System must output either a Portable Network Graphic (.png) or Graphics 
-	Interchange Format (.gif) file. This will depend on whether the input is a 
-	JPEG or PNG file (output PNG) or a GIF file (output GIF). No other file 
-	formats will be accepted. 
+	System must output a Portable Network Graphic (.png) file. No other file 
+	formats are acceptable. 
 	\paragraph{R3}
-	System must have a GUI allowing the user to input an alphanumeric string to 
-	encode into a QR code, and allowing the input an image % the phrase "allowing the input an image" doesn't make grammatical sense
-	 if desired to create 
-	an artistic QR Code.
+	System must have a GUI allowing the user to input an ascii string to 
+	encode into a QR Code, and allowing the input of an image or no image if 
+	desired to create an artistic QR Code or a standard QR Code if no image.
 	\paragraph{R4}
-	System must generate an appropriate version QR code based on the number of 
+	System must generate an appropriately versioned QR code based on the number of 
 	characters in the user input text string (versions 1 to 40) and error 
 	correction level (L,M,Q, or H).
 	\paragraph{R5}
