@@ -157,27 +157,27 @@ template~\citep{RobertsonAndRobertson2012}.
 
 \subsection{Functional Requirements}
 
-	\paragraph{}
+	\paragraph{R1}
 	System must accept image files of the format JPEG, PNG, or GIF.
-	\paragraph{}
+	\paragraph{R2}
 	System must output either a Portable Network Graphic (.png) or Graphics 
 	Interchange Format (.gif) file. This will depend on whether the input is a 
 	JPEG or PNG file (output PNG) or a GIF file (output GIF). No other file 
 	formats will be accepted. 
-	\paragraph{}
+	\paragraph{R3}
 	System must have a GUI allowing the user to input an alphanumeric string to 
 	encode into a QR code, and allowing the input an image % the phrase "allowing the input an image" doesn't make grammatical sense
 	 if desired to create 
 	an artistic QR Code.
-	\paragraph{}
+	\paragraph{R4}
 	System must generate an appropriate version QR code based on the number of 
 	characters in the user input text string (versions 1 to 40) and error 
 	correction level (L,M,Q, or H).
-	\paragraph{}
+	\paragraph{R5}
 	System must not allow the user to enter a string that contains unsupported 
 	characters for the alphanumeric mode of QR encoding, and must prevent the 
 	user from entering a string of more than MAXIMUM characters.
-	\paragraph{}	
+	\paragraph{R6}	
 	When a non compatible file is chosen, there must be a visible warning. The 
 	warning explains the allowed formats and only allows acceptance. The 
 	acceptance brings the GUI back to the original “browse for a file” state.
@@ -193,18 +193,18 @@ template~\citep{RobertsonAndRobertson2012}.
 	
 \subsection{Usability and Humanity Requirements}
 
-\paragraph{}
+\paragraph{R7}
 	The system must notify the user when an invalid input is entered for either 
 	the text or image.
-	\paragraph{}
+	\paragraph{R8}
 	the system must prompt the user for an appropriate input in the GUI, to 
 	remove confusion about the requested input for the field.
 
 \subsection{Performance Requirements}
 
-	\paragraph{}
+	\paragraph{R9}
 	The system will output the specified QR code within 5 seconds.
-	\paragraph{}
+	\paragraph{R10}
 	The output of the system must be recognizable as the original images. A 
 	viewer must be able to distinguish the QR code image that represents one 
 	input image from another QR code image which represents an input that is 
@@ -216,17 +216,17 @@ template~\citep{RobertsonAndRobertson2012}.
 
 \subsection{Operational and Environmental Requirements}
 	
-	\paragraph{}
+	\paragraph{R11}
 	The system will be used on a desktop or laptop computer.
-	\paragraph{}
+	\paragraph{R12}
 	The system will be used with a Python interpreter.
 	
 \subsection{Maintainability and Support Requirements}
 
-	\paragraph{}
+	\paragraph{R13}
 	The system will be small enough to allow for easy replacement of the system 
 	with updated versions.
-	\paragraph{}
+	\paragraph{R14}
 	The system will produce meaningful messages when the user inputs incorrect 
 	input to allow the user to resolve issues.
 
@@ -241,13 +241,13 @@ template~\citep{RobertsonAndRobertson2012}.
 
 \subsection{Legal Requirements}
 
-	\paragraph{}
+	\paragraph{R15}
 	The development of the system will follow the guidelines of GNU General 
 	Public License Version 3.
 
 \subsection{Health and Safety Requirements}
 
-	\paragraph{}
+	\paragraph{R16}
 	The system must not cause any critical failure of the computer it is run on 
 	that may pose a risk to the health and safety of the user.
 
