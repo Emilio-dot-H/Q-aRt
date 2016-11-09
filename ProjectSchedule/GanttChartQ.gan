@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Gantt_Q-aRt" company="Q-aRt Code" webLink="http://" view-date="2016-10-02" view-index="0" gantt-divider-location="448" resource-divider-location="300" version="2.8.1" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Gantt_Q-aRt" company="Q-aRt Code" webLink="http://" view-date="2016-10-12" view-index="0" gantt-divider-location="448" resource-divider-location="300" version="2.8.1" locale="en_US">
     <description><![CDATA[This is a gantt chart]]></description>
-    <view zooming-state="default:4" id="gantt-chart">
+    <view zooming-state="default:3" id="gantt-chart">
         <field id="tpd3" name="Name" width="218" order="0"/>
         <field id="tpd4" name="Begin date" width="106" order="1"/>
         <field id="tpd5" name="End date" width="105" order="2"/>
-        <option id="color.recent"><![CDATA[#cc0000 #6600cc #00ffff #000066 #ffff00 #ffff33 #ffff99 #00cc00 #339900 #33ff33]]></option>
+        <option id="color.recent"><![CDATA[#669900 #cc0000 #6600cc #00ffff #000066 #ffff00 #ffff33 #ffff99 #00cc00 #339900]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="210" order="0"/>
@@ -49,13 +49,15 @@
                 </task>
             </task>
         </task>
-        <task id="41" name="MILESTONE III" color="#33ff33" meeting="true" start="2016-11-07" duration="0" complete="0" expand="true">
-            <task id="45" name="Milestone III" color="#33ff33" meeting="false" start="2016-11-07" duration="7" complete="0" expand="true">
-                <task id="50" name="Design Document: Module Guide" color="#00cc00" meeting="false" start="2016-11-07" duration="7" complete="0" expand="true">
-                    <task id="54" name="Intro + Overview (summarize SRS + MIS)" color="#339900" meeting="false" start="2016-11-07" duration="4" complete="0" expand="true"/>
-                    <task id="61" name="Establish New Methods + Functions" color="#339900" meeting="false" start="2016-11-10" duration="4" complete="0" expand="true"/>
+        <task id="41" name="MILESTONE III" color="#33ff33" meeting="true" start="2016-11-09" duration="0" complete="0" expand="true">
+            <task id="45" name="Milestone III" color="#33ff33" meeting="false" start="2016-11-09" duration="3" complete="0" expand="true">
+                <task id="50" name="Design Document: Module Guide" color="#00cc00" meeting="false" start="2016-11-09" duration="3" complete="0" expand="true">
+                    <task id="61" name="Module Hierarchy" color="#669900" meeting="false" start="2016-11-09" duration="2" complete="0" expand="true"/>
+                    <task id="145" name="Connection between Reqs &amp; Design" color="#669900" meeting="false" start="2016-11-10" duration="1" complete="0" expand="true"/>
+                    <task id="146" name="Module Decomposition" color="#669900" meeting="false" start="2016-11-09" duration="3" complete="0" expand="true"/>
+                    <task id="147" name="Traceability Matrix" color="#669900" meeting="false" start="2016-11-10" duration="1" complete="0" expand="true"/>
+                    <task id="148" name="Use Hierarchy Between Modules" color="#669900" meeting="false" start="2016-11-09" duration="2" complete="0" expand="true"/>
                 </task>
-                <task id="62" name="Design Documentation" color="#00cc00" meeting="false" start="2016-11-07" duration="5" complete="0" expand="true"/>
             </task>
         </task>
         <task id="76" name="MILESTONE IV" color="#000066" meeting="true" start="2016-11-11" duration="0" complete="0" expand="true">
@@ -95,35 +97,33 @@
         <allocation task-id="33" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
         <allocation task-id="38" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="20.0"/>
         <allocation task-id="40" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="20.0"/>
-        <allocation task-id="61" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="25.0"/>
-        <allocation task-id="62" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="61" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="15.0"/>
         <allocation task-id="70" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="15.0"/>
         <allocation task-id="71" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="20.0"/>
         <allocation task-id="72" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="30.0"/>
-        <allocation task-id="54" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="15.0"/>
         <allocation task-id="94" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="112" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="15.0"/>
         <allocation task-id="114" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="142" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="143" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
+        <allocation task-id="146" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="25.0"/>
         <allocation task-id="8" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="15.0"/>
         <allocation task-id="20" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="33" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
         <allocation task-id="38" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="40" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="62" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
         <allocation task-id="70" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="15.0"/>
         <allocation task-id="71" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="72" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="30.0"/>
         <allocation task-id="130" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="142" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
         <allocation task-id="143" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="20.0"/>
+        <allocation task-id="147" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="8" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="15.0"/>
         <allocation task-id="20" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="33" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
         <allocation task-id="38" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="40" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
-        <allocation task-id="62" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
         <allocation task-id="70" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="15.0"/>
         <allocation task-id="71" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="72" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="30.0"/>
@@ -132,6 +132,8 @@
         <allocation task-id="131" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="142" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
         <allocation task-id="143" resource-id="2" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
+        <allocation task-id="145" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="15.0"/>
+        <allocation task-id="148" resource-id="2" function="SoftwareDevelopment:2" responsible="true" load="15.0"/>
     </allocations>
     <vacations/>
     <previous/>

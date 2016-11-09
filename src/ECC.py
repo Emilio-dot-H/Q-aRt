@@ -19,7 +19,7 @@
 ## @brief Method to obtain error correction codewords.
 #  @author Elton Kjeld Schiott
 #  @date 2/11/2016
-#  @details Method accepts four parameters
+#  @details Method accepts three parameters
 #  @param version Integer between 1 and 40 that specifies the size of the QR code.
 #  @param ecl Accepts one of four values: 'L', 'M', 'Q', 'H' that specify the
 #  level of error correction to be encoded.
