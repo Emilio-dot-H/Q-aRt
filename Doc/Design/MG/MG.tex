@@ -135,10 +135,19 @@ We dedicated a module aptly named GUI to cover and contain R3 entirely.
 We also made the input for the entire program simultaneous to combine couplings
 with the new GUI (which was not part of the original project). We also 
 decided to fill R4 through user input of desired size and error correction level.
+This general interface will also cover R9, and will comply with R7.
 
 \paragraph{}
-In the case of R5 and R6 we decided to fulfill the check as soon as the input is 
+In the case of input rejection we decided to fulfill the input check as soon as it is 
 recieved from the GUI. To do this we simply layed the light check-code in the main function.
+This set of checks encompasses solutions to R5, R6, R8 and R15.
+
+\paragraph{}
+To achieve R10 and R14 we minimilized the system by removing the moving-image QR 
+Codes, which made sense considering that our expected application is mostly printed 
+graphics (since a QR Code could be replaced with a linked image on a web page and 
+unclickable digital advertisements are not yet as common). This will not make any 
+remaining creations faster but will certainly cut down on program size.
 
 \section{Module Decomposition} \label{SecMD}
 
