@@ -135,45 +135,65 @@ The system consists of 7 modules including 'Main.py'. The modules listed below a
 \section{Module Decomposition} \label{SecMD}
 
 
-\subsection{Hardware Hiding Modules (\mref{mHH})}
+\subsection{Behaviour-Hiding Module (\mref{mHH})}
+
+\subsubsection{Main (\mref{mInput})}
 
 \begin{description}
-\item[Secrets:]
-\item[Services:]
-\item[Implemented By:]
+\item[Secrets:] The format and structure of the input data.
+\item[Services:] Calls all the modules in a specified order, except for the Constants Module.
+\item[Implemented By:] Q-aRt Code
 \end{description}
 
-\subsection{Behaviour-Hiding Module}
+\subsubsection{Constants Module (\mref{mInput})}
 
 \begin{description}
-\item[Secrets:]
-\item[Services:]
-\item[Implemented By:] --
+\item[Secrets:] Lists of characters/integers/bits associated to certain classifications (alphanumerics, mode indicators, etc..).
+\item[Services:] Acts as a library or reference tool.
+\item[Implemented By:] Q-aRt Code
 \end{description}
 
-\subsubsection{Input Format Module (\mref{mInput})}
+\subsubsection{Draw Module (\mref{mInput})}
 
 \begin{description}
-\item[Secrets:]
-\item[Services:]
-\item[Implemented By:] 
+\item[Secrets:] The format and structure of the output data.
+\item[Services:] Generates a PNG image file representing the data contained in the QR code matrix.
+\item[Implemented By:] Q-aRt Code
 \end{description}
 
-\subsubsection{Etc.}
+\subsubsection{Structure Module (\mref{mInput})}
 
+\begin{description}
+\item[Secrets:] Encoded interleaved data.
+\item[Services:] Interleaves the generated data codewords and error correction codewords by QR code standards before the data is placed in the matrix.
+\item[Implemented By:] Q-aRt Code
+\end{description}
 
 \subsection{Software Decision Module}
 
+\subsubsection{Data Module (\mref{mInput})}
+
 \begin{description}
-\item[Secrets:] 
-  
-\item[Services:]  
-  % Changes in these modules are more likely to be motivated by a desire to
-  % improve performance than by externally imposed changes.
-\item[Implemented By:] --
+\item[Secrets:] Algorithms used to  encode data bits and pad strings. Methods of conversion from str to bin.
+\item[Services:] Encodes the data bits for a QR code given an input string, version, error correction level, and mode.
+\item[Implemented By:] Q-aRt Code
 \end{description}
 
-\subsubsection{Etc.}
+\subsubsection{ECC Module (\mref{mInput})}
+
+\begin{description}
+\item[Secrets:] Algorithms to deduce error correction codewords, divide message polynomials and obtaining the result of the exclusive or operation on the generator and message polynomials.
+\item[Services:] Generates error correction codewords for a given version, level and data string
+\item[Implemented By:] Q-aRt Code
+\end{description}
+
+\subsubsection{Matrix Module (\mref{mInput})}
+
+\begin{description}
+\item[Secrets:] A matrix containing the final QR Code
+\item[Services:] Places the data in a matrix
+\item[Implemented By:] Q-aRt Code
+\end{description}
 
 \section{Traceability Matrix} \label{SecTM}
 
