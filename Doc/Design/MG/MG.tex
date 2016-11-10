@@ -33,7 +33,7 @@
 
 \author{Team 05, Q-aRt QTs 
 \\Elton Schiott schiotek 
-\\Emilio Hajj hajje 
+\\Emmilio Hajj hajje 
 \\Liam Duncan duncanla
 }
 
@@ -90,11 +90,18 @@ The max number of characters encoded is not likely to change, as our choice was 
 \end{description}
 
 \section{Module Hierarchy} \label{SecMH}
-
+The system consists of 7 modules including 'Main.py'. The modules listed below are the modules that will be implemented in our system. 
 
 \begin{description}
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:]
-\item ...
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Behaviour-Hiding Module
+\item Constants
+\item Draw 
+\item Main 
+\item Structure 
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Software Decision Module
+\item Data 
+\item ECC
+\item Matrix
 \end{description}
 
 
@@ -105,22 +112,16 @@ The max number of characters encoded is not likely to change, as our choice was 
 \textbf{Level 1} & \textbf{Level 2}\\
 \midrule
 
-{Hardware-Hiding Module} & ~ \\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & Input Format (Main.py)\\
+& Library of characters (Constants.py) \\
+& Output Format (Draw.py)\\
+& Encoded Interleaved Data (Structure.py)\\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
-\midrule
-
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
+\multirow{3}{0.3\textwidth}{Software Decision Module} & {Encoding and Padin Algorithms (Data.py)}\\
+& Conversion Methods (Data.py)\\
+&Matrix Data Structure Format (Matrix.py)\\
+&Codeword Generating Algorithm (ECC.py)\\
 \bottomrule
 
 \end{tabular}
