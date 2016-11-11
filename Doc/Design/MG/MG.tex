@@ -29,7 +29,7 @@
 \newcommand{\mthemnum}{M\themnum}
 \newcommand{\mref}[1]{M\ref{#1}}
 
-\title{SE 3XA3: Software Requirements Specification\\Title of Project}
+\title{SE 3XA3: Software Requirements Specification\\Module Guide}
 
 \author{Team 05, Q-aRt QTs 
 \\Elton Schiott schiotek 
@@ -91,10 +91,19 @@ The max number of characters encoded is not likely to change, as our choice was 
 
 \section{Module Hierarchy} \label{SecMH}
 
-
+The system consists of 7 modules including 'Main.py'. The modules listed below are the modules that will be implemented in our system.
 \begin{description}
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:]
-\item ...
+
+ \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Behaviour-Hiding Modules
+
+ \item Constants
+ \item Draw 
+ \item Main 
+ \item Structure 
+ \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Software Decision Modules
+ \item Data 
+ \item ECC
+ \item Matrix
 \end{description}
 
 
@@ -105,22 +114,16 @@ The max number of characters encoded is not likely to change, as our choice was 
 \textbf{Level 1} & \textbf{Level 2}\\
 \midrule
 
-{Hardware-Hiding Module} & ~ \\
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Modules} & Input Format (Main.py)\\
+& Library of characters (Constants.py) \\
+& Output Format (Draw.py)\\
+& Encoded Interleaved Data (Structure.py)\\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
-\midrule
-
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
+\multirow{3}{0.3\textwidth}{Software Decision Modules} & {Encoding and Pading Algorithms (Data.py)}\\
+& Conversion Methods (Data.py)\\
+&Matrix Data Structure Format (Matrix.py)\\
+&Codeword Generating Algorithm (ECC.py)\\
 \bottomrule
 
 \end{tabular}
@@ -199,7 +202,7 @@ remaining creations faster but will certainly cut down on program size.
 \subsubsection{ECC Module (\mref{mInput})}
 
 \begin{description}
-\item[Secrets:] Algorithms to deduce error correction codewords, divide message polynomials and obtaining the result of the exclusive or operation on the generator and message polynomials.
+\item[Secrets:] Algorithms to deduce error correction codewords, divide message polynomials and obtains the result of the 'exclusive OR' operation on the generator/message polynomials.
 \item[Services:] Generates error correction codewords for a given version, level and data string
 \item[Implemented By:] Q-aRt Code
 \end{description}
