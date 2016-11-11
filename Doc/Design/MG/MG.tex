@@ -266,6 +266,17 @@ R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
 
 \section{Use Hierarchy Between Modules} \label{SecUse}
 
+Main USES Data, Structure, ECC, Matrix
+Data, Structure, ECC, Matrix USES Constant
+
+The process of QR Code generation and image combination is essentially linear 
+and should be completely dictated by the original input. The main method calls 
+all modules other than Constant as libraries in turn to process the element being
+created. Constant is a library of raw data, integers and standard values, that 
+are used for various subtasks throughout the linear process. Because of this, the 
+modular heirarchy percolates at both ends into Main at the top and Constants at 
+the bottom, with all other modules on the same center level and all connected 
+to each point of percolation.
 
 \begin{figure}[H]
 \centering
