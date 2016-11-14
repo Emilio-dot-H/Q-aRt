@@ -155,9 +155,9 @@ remaining creations faster but will certainly cut down on program size.
 \section{Module Decomposition} \label{SecMD}
 
 
-\subsection{Behaviour-Hiding Module (\mref{mHH})}
+\subsection{Behaviour-Hiding Module}
 
-\subsubsection{Main (\mref{mInput})}
+\subsubsection{Main (M1)}
 
 \begin{description}
 \item[Secrets:] The format and structure of the input data.
@@ -165,7 +165,7 @@ remaining creations faster but will certainly cut down on program size.
 \item[Implemented By:] Q-aRt Code
 \end{description}
 
-\subsubsection{Constants Module (\mref{mInput})}
+\subsubsection{Constants Module (M2)}
 
 \begin{description}
 \item[Secrets:] Lists of characters/integers/bits associated to certain classifications (alphanumerics, mode indicators, etc..).
@@ -173,7 +173,7 @@ remaining creations faster but will certainly cut down on program size.
 \item[Implemented By:] Q-aRt Code
 \end{description}
 
-\subsubsection{Draw Module (\mref{mInput})}
+\subsubsection{Draw Module (M3)}
 
 \begin{description}
 \item[Secrets:] The format and structure of the output data.
@@ -181,7 +181,7 @@ remaining creations faster but will certainly cut down on program size.
 \item[Implemented By:] Q-aRt Code
 \end{description}
 
-\subsubsection{Structure Module (\mref{mInput})}
+\subsubsection{Structure Module (M4)}
 
 \begin{description}
 \item[Secrets:] Encoded interleaved data.
@@ -191,7 +191,7 @@ remaining creations faster but will certainly cut down on program size.
 
 \subsection{Software Decision Module}
 
-\subsubsection{Data Module (\mref{mInput})}
+\subsubsection{Data Module (M5)}
 
 \begin{description}
 \item[Secrets:] Algorithms used to  encode data bits and pad strings. Methods of conversion from str to bin.
@@ -199,7 +199,7 @@ remaining creations faster but will certainly cut down on program size.
 \item[Implemented By:] Q-aRt Code
 \end{description}
 
-\subsubsection{ECC Module (\mref{mInput})}
+\subsubsection{ECC Module (M6)}
 
 \begin{description}
 \item[Secrets:] Algorithms to deduce error correction codewords, divide message polynomials and obtains the result of the 'exclusive OR' operation on the generator/message polynomials.
@@ -207,7 +207,7 @@ remaining creations faster but will certainly cut down on program size.
 \item[Implemented By:] Q-aRt Code
 \end{description}
 
-\subsubsection{Matrix Module (\mref{mInput})}
+\subsubsection{Matrix Module (M7)}
 
 \begin{description}
 \item[Secrets:] A matrix containing the final QR Code
@@ -226,17 +226,17 @@ remaining creations faster but will certainly cut down on program size.
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-R1 & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
-R2 & \mref{mInput}, \mref{mParams}\\
-R3 & \mref{mVerify}\\
-R4 & \mref{mOutput}, \mref{mControl}\\
-R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R9 & \mref{mVerifyOut}\\
-R10 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
-R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
+R1 & M1, M3\\
+R2 & M1, M3\\
+R3 & M1\\
+R4 & M2, M4, M5, M6, M7\\
+R5 & M5\\
+R6 & M1\\
+R7 & M1\\
+R8 & M5\\
+R9 & M1\\
+R10 & M2, M4, M5, M6, M7\\
+R11 & M1, M3\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
@@ -249,18 +249,10 @@ R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-\acref{acHardware} & \mref{mHH}\\
-\acref{acInput} & \mref{mInput}\\
-\acref{acParams} & \mref{mParams}\\
-\acref{acVerify} & \mref{mVerify}\\
-\acref{acOutput} & \mref{mOutput}\\
-\acref{acVerifyOut} & \mref{mVerifyOut}\\
-\acref{acODEs} & \mref{mODEs}\\
-\acref{acEnergy} & \mref{mEnergy}\\
-\acref{acControl} & \mref{mControl}\\
-\acref{acSeqDS} & \mref{mSeqDS}\\
-\acref{acSolver} & \mref{mSolver}\\
-\acref{acPlot} & \mref{mPlot}\\
+AC1 & M1, M3\\
+AC2 & M2, M4, M5, M6, M7\\
+UC1 & M2, M4, M5, M6, M7\\
+UC2 & M4\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
