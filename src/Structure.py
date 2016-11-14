@@ -7,18 +7,17 @@
 ##
 # @file Structure.py
 # @title Structure
-# @author Elton Kjeld Schiott
 # @date 4/11/2016
 # @brief This class handles interleaving of data codewords and error correction
 # codewords. 
 # @details This class interleaves the generated data codewords and error correction
-# codewords by QR code standards before the data is placed in the matrix.
+# codewords by QR code standards before the data is placed in the matrix.\n
+# State variables: none\n
 # @code
 #   finalData = Structure.getFinalData(30, 'M', dataCodewords, errorCodewords)
 # @endcode
 
 ## @brief Method to structure final data.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts four parameters. 
 #  @param version Integer between 1 and 40 that specifies the size of the QR code.
@@ -32,7 +31,6 @@ def getFinalData(version, ecl, dataCodewords, errorCodewords):
     pass
 
 ## @brief Method to interleave data codewords.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts three parameters. 
 #  @param version Integer between 1 and 40 that specifies the size of the QR code.
@@ -45,7 +43,6 @@ def interleaveData(version, ecl, dataCodewords):
     pass
 
 ## @brief Method to interleave error codewords.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts one parameter.
 #  @param errorCodewords Accepts an array containing error correction codewords.

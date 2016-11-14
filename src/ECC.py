@@ -7,17 +7,18 @@
 ##
 # @file ECC.py
 # @title ECC
-# @author Elton Kjeld Schiott
 # @date 2/11/2016
 # @brief This class generates error correction codewords. 
 # @details This class generates error correction codewords for a given version, error correction
-# level and data string.
+# level and data string.\n
+# State variables:\n
+# int list MP - coefficients representing the message polynomial at each iteration.\n
+# int list GP - coefficients representing the generator polynomial at each iteration.\n
 # @code
 #   codewords = ECC.getCodewords(1, 'Q', data)
 # @endcode
 
 ## @brief Method to obtain error correction codewords.
-#  @author Elton Kjeld Schiott
 #  @date 2/11/2016
 #  @details Method accepts three parameters
 #  @param version Integer between 1 and 40 that specifies the size of the QR code.
@@ -29,7 +30,6 @@ def getCodewords(version, ecl, data):
     pass
 
 ## @brief Method to divide the message polynomial by the generator polynomial
-#  @author Elton Kjeld Schiott
 #  @date 2/11/2016
 #  @details Method accepts two parameters.
 #  @param MP Accepts an array of coefficients representing the message polynomial.

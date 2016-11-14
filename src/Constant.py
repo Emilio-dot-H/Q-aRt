@@ -1,3 +1,29 @@
+# Constants for QR Generation
+# Author: Elton Kjeld Schiott
+# This class contains useful constants for qr processing.
+## @mainpage Mainpage
+#
+##
+# @file Constant.py
+# @title Constant
+# @date 13/11/2016
+# @brief This class contains useful constants for qr processing.
+# @details State variables:\n
+# characterCapacity - list of character capacities for each version and error correction level\n
+# requriedBytes - list of required bytes for each version\n
+# numList - list of valid characters for numeric mode\n
+# alphanumList - list of valid characters for alphanumeric mode\n
+# groupingList - list of codeword grouping into blocks for each version\n
+# modeIndicator - list of encoding mode strings\n
+# GPList - lsit of generator polynomials\n
+# codewordsPerBlock - list of error correction codewords per block for each version and error correction level\n
+# powersOf2 - list of powers of two in Galois Field\n
+# log - list of logarithms in Galois Field\n
+# remainderBits - list of required remainder bits for each version for interleaving\n
+# alignmentLocations - list of alignment pattern locations for each version\n
+# formatString - list of format strings for each mask pattern\n
+# versionString - list of version strings for each version\n
+
 
 # import
 

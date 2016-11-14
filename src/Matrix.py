@@ -6,17 +6,17 @@
 ##
 # @file Matrix.py
 # @title Matrix
-# @author Elton Kjeld Schiott
 # @date 4/11/2016
 # @brief This class places the data in a matrix.
 # @details This class creates a matrix, places structures required according to
-# QR code standards, evaluates the best mask pattern and applies it to the data.
+# QR code standards, evaluates the best mask pattern and applies it to the data.\n
+# State variables:\n
+# int array qrmatrix - 2D array representing the QR code matrix.\n
 # @code
 #   QRMatrix = Matrix.getMatrix(2, 'L', finalData)
 # @endcode
 
 ## @brief Method to get the matrix representing the final QR code.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts three parameters.
 #  @param version Integer between 1 and 40 that specifies the size of the QR code.
@@ -28,7 +28,6 @@ def getMatrix(version, ecl, data):
     pass
 
 ## @brief Method to add finder and separator patterns to the QR code matrix.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts one parameter.
 #  @param qrmatrix Accepts a 2D array representing the QR code matrix.
@@ -37,7 +36,6 @@ def addFinders(qrmatrix):
     pass
 
 ## @brief Method to add alignment patterns to the QR code matrix.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts two parameters.
 #  @param version Integer between 1 and 40 that specifies the size of the QR code.
@@ -47,7 +45,6 @@ def addAlignment(version, qrmatrix):
     pass
 
 ## @brief Method to place an alignment pattern in the matrix.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts three parameters
 #  @param qrmatrix Accepts a 2D array representing the QR code matrix.
@@ -58,7 +55,6 @@ def placeAlignmentPattern(qrmatrix, row, column):
     pass
 
 ## @brief Method to add timing patterns to the QR code matrix.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts one parameter.
 #  @param qrmatrix Accepts a 2D array representing the QR code matrix.
@@ -67,7 +63,6 @@ def addTiming(qrmatrix):
     pass
 
 ## @brief Method to add the dark bit and reserved bits to the QR code matrix.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts two parameters.
 #  @param version Integer between 1 and 40 that specifies the size of the QR code.
@@ -77,7 +72,6 @@ def addReserved(version, qrmatrix):
     pass
 
 ## @brief Method to add data bits to the QR code matrix.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts two parameters.
 #  @param qrmatrix Accepts a 2D array representing the QR code matrix.
@@ -87,7 +81,6 @@ def addDataBits(qrmatrix, data):
     pass
 
 ## @brief Method to mask the QR code data.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts two parameters.
 #  @param qrmatrix Accepts a 2D array representing the QR code matrix.
@@ -97,7 +90,6 @@ def mask(qrmatrix, maskMatrix):
     pass
 
 ## @brief Method to generate mask pattern matrices.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts one parameter.
 #  @param maskMatrix Accepts a 2D array representing the mask pattern matrix
@@ -106,7 +98,6 @@ def getMaskPatterns(maskMatrix):
     pass
 
 ## @brief Method to evaluate the quality of a mask on the QR code matrix.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts one parameter.
 #  @param qrmatrix Accepts a 2D array representing the QR code matrix.
@@ -115,7 +106,6 @@ def evaluateMask(qrmatrix):
     pass
 
 ## @brief Method to add format and version strings to the QR code matrix.
-#  @author Elton Kjeld Schiott
 #  @date 4/11/2016
 #  @details Method accepts four parameters.
 #  @param version Integer between 1 and 40 that specifies the size of the QR code.
