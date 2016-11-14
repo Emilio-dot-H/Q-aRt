@@ -1,0 +1,303 @@
+\hypertarget{_matrix_8py}{}\section{Matrix.\+py File Reference}
+\label{_matrix_8py}\index{Matrix.\+py@{Matrix.\+py}}
+
+
+Matrix  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{_matrix_8py_aa72907935dfdb6e5004f27ec8cca15f4}{Matrix.\+get\+Matrix} (version, ecl, data)
+\begin{DoxyCompactList}\small\item\em Method to get the matrix representing the final QR code. \end{DoxyCompactList}\item 
+def \hyperlink{_matrix_8py_a1aefd8341dfa39cfb747b0cba00b9631}{Matrix.\+add\+Finders} (qrmatrix)
+\begin{DoxyCompactList}\small\item\em Method to add finder and separator patterns to the QR code matrix. \end{DoxyCompactList}\item 
+def \hyperlink{_matrix_8py_a0f16452458a5d6536fed7d595b9999c9}{Matrix.\+add\+Alignment} (version, qrmatrix)
+\begin{DoxyCompactList}\small\item\em Method to add alignment patterns to the QR code matrix. \end{DoxyCompactList}\item 
+def \hyperlink{_matrix_8py_ac04e0ca22cae8d4e3e474eb67a832363}{Matrix.\+place\+Alignment\+Pattern} (qrmatrix, row, column)
+\begin{DoxyCompactList}\small\item\em Method to place an alignment pattern in the matrix. \end{DoxyCompactList}\item 
+def \hyperlink{_matrix_8py_ad3f8c0b9dc79e92a29e88aca87a2a620}{Matrix.\+add\+Timing} (qrmatrix)
+\begin{DoxyCompactList}\small\item\em Method to add timing patterns to the QR code matrix. \end{DoxyCompactList}\item 
+def \hyperlink{_matrix_8py_a1913c39def3a10316154b1bf522963bc}{Matrix.\+add\+Reserved} (version, qrmatrix)
+\begin{DoxyCompactList}\small\item\em Method to add the dark bit and reserved bits to the QR code matrix. \end{DoxyCompactList}\item 
+def \hyperlink{_matrix_8py_abec77cbf2b5da129e2c6807458dad06d}{Matrix.\+add\+Data\+Bits} (qrmatrix, data)
+\begin{DoxyCompactList}\small\item\em Method to add data bits to the QR code matrix. \end{DoxyCompactList}\item 
+def \hyperlink{_matrix_8py_a0a086db5bb5d162b0cb99dff0d7b4fa6}{Matrix.\+mask} (qrmatrix, mask\+Matrix)
+\begin{DoxyCompactList}\small\item\em Method to mask the QR code data. \end{DoxyCompactList}\item 
+def \hyperlink{_matrix_8py_a63ab75a731fe2334de450379f8ba9aa6}{Matrix.\+get\+Mask\+Patterns} (mask\+Matrix)
+\begin{DoxyCompactList}\small\item\em Method to generate mask pattern matrices. \end{DoxyCompactList}\item 
+def \hyperlink{_matrix_8py_a4005e9c0c09cd3f5037c5d311e43826d}{Matrix.\+evaluate\+Mask} (qrmatrix)
+\begin{DoxyCompactList}\small\item\em Method to evaluate the quality of a mask on the QR code matrix. \end{DoxyCompactList}\item 
+def \hyperlink{_matrix_8py_af3b187b8a5b3c967b33eca009e4c73d9}{Matrix.\+add\+Format\+Version} ()
+\begin{DoxyCompactList}\small\item\em Method to add format and version strings to the QR code matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Matrix 
+
+\begin{DoxyDate}{Date}
+4/11/2016 This class places the data in a matrix.
+\end{DoxyDate}
+This class creates a matrix, places structures required according to QR code standards, evaluates the best mask pattern and applies it to the data.~\newline
+ State variables\+:~\newline
+ int array qrmatrix -\/ 2D array representing the QR code matrix.~\newline
+
+\begin{DoxyCode}
+QRMatrix = \hyperlink{_matrix_8py_aa72907935dfdb6e5004f27ec8cca15f4}{Matrix.getMatrix}(2, \textcolor{stringliteral}{'L'}, finalData)
+\end{DoxyCode}
+ 
+
+\subsection{Function Documentation}
+\hypertarget{_matrix_8py_file_a0f16452458a5d6536fed7d595b9999c9}{}\label{_matrix_8py_file_a0f16452458a5d6536fed7d595b9999c9} 
+\index{Matrix.\+py@{Matrix.\+py}!add\+Alignment@{add\+Alignment}}
+\index{add\+Alignment@{add\+Alignment}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{add\+Alignment()}{addAlignment()}}
+{\footnotesize\ttfamily def Matrix.\+add\+Alignment (\begin{DoxyParamCaption}\item[{}]{version,  }\item[{}]{qrmatrix }\end{DoxyParamCaption})}
+
+
+
+Method to add alignment patterns to the QR code matrix. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts two parameters. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em qrmatrix} & Accepts a 2D array representing the QR code matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Modifies the matrix, does not return a value. 
+\end{DoxyReturn}
+\hypertarget{_matrix_8py_file_abec77cbf2b5da129e2c6807458dad06d}{}\label{_matrix_8py_file_abec77cbf2b5da129e2c6807458dad06d} 
+\index{Matrix.\+py@{Matrix.\+py}!add\+Data\+Bits@{add\+Data\+Bits}}
+\index{add\+Data\+Bits@{add\+Data\+Bits}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{add\+Data\+Bits()}{addDataBits()}}
+{\footnotesize\ttfamily def Matrix.\+add\+Data\+Bits (\begin{DoxyParamCaption}\item[{}]{qrmatrix,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+Method to add data bits to the QR code matrix. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts two parameters. 
+\begin{DoxyParams}{Parameters}
+{\em qrmatrix} & Accepts a 2D array representing the QR code matrix. \\
+\hline
+{\em data} & Accepts the string containing the final binary data to be placed in the matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Modifies the matrix, does not return a value. 
+\end{DoxyReturn}
+\hypertarget{_matrix_8py_file_a1aefd8341dfa39cfb747b0cba00b9631}{}\label{_matrix_8py_file_a1aefd8341dfa39cfb747b0cba00b9631} 
+\index{Matrix.\+py@{Matrix.\+py}!add\+Finders@{add\+Finders}}
+\index{add\+Finders@{add\+Finders}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{add\+Finders()}{addFinders()}}
+{\footnotesize\ttfamily def Matrix.\+add\+Finders (\begin{DoxyParamCaption}\item[{}]{qrmatrix }\end{DoxyParamCaption})}
+
+
+
+Method to add finder and separator patterns to the QR code matrix. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts one parameter. 
+\begin{DoxyParams}{Parameters}
+{\em qrmatrix} & Accepts a 2D array representing the QR code matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Modifies the matrix, does not return a value. 
+\end{DoxyReturn}
+\hypertarget{_matrix_8py_file_af3b187b8a5b3c967b33eca009e4c73d9}{}\label{_matrix_8py_file_af3b187b8a5b3c967b33eca009e4c73d9} 
+\index{Matrix.\+py@{Matrix.\+py}!add\+Format\+Version@{add\+Format\+Version}}
+\index{add\+Format\+Version@{add\+Format\+Version}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{add\+Format\+Version()}{addFormatVersion()}}
+{\footnotesize\ttfamily def Matrix.\+add\+Format\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method to add format and version strings to the QR code matrix. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts four parameters. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em ecl} & Accepts one of four values\+: \textquotesingle{}L\textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}Q\textquotesingle{}, \textquotesingle{}H\textquotesingle{} that specify the level of error correction to be encoded. \\
+\hline
+{\em qrmatrix} & Accepts a 2D array representing the QR code matrix. \\
+\hline
+{\em mask\+Num} & Accepts an integer between 0 and 7 indicating the id of the mask pattern used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Modifies the matrix, does not return a value. 
+\end{DoxyReturn}
+\hypertarget{_matrix_8py_file_a1913c39def3a10316154b1bf522963bc}{}\label{_matrix_8py_file_a1913c39def3a10316154b1bf522963bc} 
+\index{Matrix.\+py@{Matrix.\+py}!add\+Reserved@{add\+Reserved}}
+\index{add\+Reserved@{add\+Reserved}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{add\+Reserved()}{addReserved()}}
+{\footnotesize\ttfamily def Matrix.\+add\+Reserved (\begin{DoxyParamCaption}\item[{}]{version,  }\item[{}]{qrmatrix }\end{DoxyParamCaption})}
+
+
+
+Method to add the dark bit and reserved bits to the QR code matrix. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts two parameters. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em qrmatrix} & Accepts a 2D array representing the QR code matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Modifies the matrix, does not return a value. 
+\end{DoxyReturn}
+\hypertarget{_matrix_8py_file_ad3f8c0b9dc79e92a29e88aca87a2a620}{}\label{_matrix_8py_file_ad3f8c0b9dc79e92a29e88aca87a2a620} 
+\index{Matrix.\+py@{Matrix.\+py}!add\+Timing@{add\+Timing}}
+\index{add\+Timing@{add\+Timing}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{add\+Timing()}{addTiming()}}
+{\footnotesize\ttfamily def Matrix.\+add\+Timing (\begin{DoxyParamCaption}\item[{}]{qrmatrix }\end{DoxyParamCaption})}
+
+
+
+Method to add timing patterns to the QR code matrix. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts one parameter. 
+\begin{DoxyParams}{Parameters}
+{\em qrmatrix} & Accepts a 2D array representing the QR code matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Modifies the matrix, does not return a value. 
+\end{DoxyReturn}
+\hypertarget{_matrix_8py_file_a4005e9c0c09cd3f5037c5d311e43826d}{}\label{_matrix_8py_file_a4005e9c0c09cd3f5037c5d311e43826d} 
+\index{Matrix.\+py@{Matrix.\+py}!evaluate\+Mask@{evaluate\+Mask}}
+\index{evaluate\+Mask@{evaluate\+Mask}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{evaluate\+Mask()}{evaluateMask()}}
+{\footnotesize\ttfamily def Matrix.\+evaluate\+Mask (\begin{DoxyParamCaption}\item[{}]{qrmatrix }\end{DoxyParamCaption})}
+
+
+
+Method to evaluate the quality of a mask on the QR code matrix. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts one parameter. 
+\begin{DoxyParams}{Parameters}
+{\em qrmatrix} & Accepts a 2D array representing the QR code matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer indicating the score achieved by the mask pattern on the matrix. 
+\end{DoxyReturn}
+\hypertarget{_matrix_8py_file_a63ab75a731fe2334de450379f8ba9aa6}{}\label{_matrix_8py_file_a63ab75a731fe2334de450379f8ba9aa6} 
+\index{Matrix.\+py@{Matrix.\+py}!get\+Mask\+Patterns@{get\+Mask\+Patterns}}
+\index{get\+Mask\+Patterns@{get\+Mask\+Patterns}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{get\+Mask\+Patterns()}{getMaskPatterns()}}
+{\footnotesize\ttfamily def Matrix.\+get\+Mask\+Patterns (\begin{DoxyParamCaption}\item[{}]{mask\+Matrix }\end{DoxyParamCaption})}
+
+
+
+Method to generate mask pattern matrices. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts one parameter. 
+\begin{DoxyParams}{Parameters}
+{\em mask\+Matrix} & Accepts a 2D array representing the mask pattern matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an array containing all mask pattern matrices. 
+\end{DoxyReturn}
+\hypertarget{_matrix_8py_file_aa72907935dfdb6e5004f27ec8cca15f4}{}\label{_matrix_8py_file_aa72907935dfdb6e5004f27ec8cca15f4} 
+\index{Matrix.\+py@{Matrix.\+py}!get\+Matrix@{get\+Matrix}}
+\index{get\+Matrix@{get\+Matrix}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{get\+Matrix()}{getMatrix()}}
+{\footnotesize\ttfamily def Matrix.\+get\+Matrix (\begin{DoxyParamCaption}\item[{}]{version,  }\item[{}]{ecl,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+Method to get the matrix representing the final QR code. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts three parameters. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em ecl} & Accepts one of four values\+: \textquotesingle{}L\textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}Q\textquotesingle{}, \textquotesingle{}H\textquotesingle{} that specify the level of error correction to be encoded. \\
+\hline
+{\em data} & Accepts the string containing the final binary data to be placed in the matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a 2D array representing the final QR code. 
+\end{DoxyReturn}
+\hypertarget{_matrix_8py_file_a0a086db5bb5d162b0cb99dff0d7b4fa6}{}\label{_matrix_8py_file_a0a086db5bb5d162b0cb99dff0d7b4fa6} 
+\index{Matrix.\+py@{Matrix.\+py}!mask@{mask}}
+\index{mask@{mask}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{mask()}{mask()}}
+{\footnotesize\ttfamily def Matrix.\+mask (\begin{DoxyParamCaption}\item[{}]{qrmatrix,  }\item[{}]{mask\+Matrix }\end{DoxyParamCaption})}
+
+
+
+Method to mask the QR code data. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts two parameters. 
+\begin{DoxyParams}{Parameters}
+{\em qrmatrix} & Accepts a 2D array representing the QR code matrix. \\
+\hline
+{\em mask\+Matrix} & Accepts a 2D array representing the mask pattern matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the masked matrix with the best score and the id of what mask pattern was used. 
+\end{DoxyReturn}
+\hypertarget{_matrix_8py_file_ac04e0ca22cae8d4e3e474eb67a832363}{}\label{_matrix_8py_file_ac04e0ca22cae8d4e3e474eb67a832363} 
+\index{Matrix.\+py@{Matrix.\+py}!place\+Alignment\+Pattern@{place\+Alignment\+Pattern}}
+\index{place\+Alignment\+Pattern@{place\+Alignment\+Pattern}!Matrix.\+py@{Matrix.\+py}}
+\subsubsection{\texorpdfstring{place\+Alignment\+Pattern()}{placeAlignmentPattern()}}
+{\footnotesize\ttfamily def Matrix.\+place\+Alignment\+Pattern (\begin{DoxyParamCaption}\item[{}]{qrmatrix,  }\item[{}]{row,  }\item[{}]{column }\end{DoxyParamCaption})}
+
+
+
+Method to place an alignment pattern in the matrix. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts three parameters 
+\begin{DoxyParams}{Parameters}
+{\em qrmatrix} & Accepts a 2D array representing the QR code matrix. \\
+\hline
+{\em row} & Accepts an integer specifying the row where the pattern will be placed. \\
+\hline
+{\em column} & Accepts an integer specifying the column where the pattern will be placed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Modifies the matrix, does not return a value. 
+\end{DoxyReturn}

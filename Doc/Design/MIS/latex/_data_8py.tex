@@ -1,0 +1,122 @@
+\hypertarget{_data_8py}{}\section{Data.\+py File Reference}
+\label{_data_8py}\index{Data.\+py@{Data.\+py}}
+
+
+Data  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{_data_8py_abd52a8291056e8a033c5d8ad8f5dded5}{Data.\+get\+Data\+Bits} (version, ecl, mode, input\+String)
+\begin{DoxyCompactList}\small\item\em Method to obtain data bits for a QR code. \end{DoxyCompactList}\item 
+def \hyperlink{_data_8py_a2436ae57e24ed63ba806939a94d2645b}{Data.\+bin\+String} (data, length)
+\begin{DoxyCompactList}\small\item\em Method to create a suitable binary string for given data. \end{DoxyCompactList}\item 
+def \hyperlink{_data_8py_a3fa8b667fa1263fed09ee5d1d08d2e60}{Data.\+analyse} (version, ecl, input\+String)
+\begin{DoxyCompactList}\small\item\em Method to determine the appropriate mode and version for a QR code. \end{DoxyCompactList}\item 
+def \hyperlink{_data_8py_a5ff355345294176164aa59312fd87f70}{Data.\+byte\+Encoding} (input\+String)
+\begin{DoxyCompactList}\small\item\em Method to encode the Input String as byte code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data 
+
+\begin{DoxyDate}{Date}
+2/11/2016 This class encodes data bits for a QR code.
+\end{DoxyDate}
+This class encodes the data bits for a QR code given an input string, version, error correction level, and mode.~\newline
+ State variables\+:~\newline
+ String data -\/ contains the binary string that reprsents the encoded input string. 
+\begin{DoxyCode}
+data = \hyperlink{_data_8py_abd52a8291056e8a033c5d8ad8f5dded5}{Data.getDataBits}(5,\textcolor{stringliteral}{'H'},BYTE, inputString)
+\end{DoxyCode}
+ 
+
+\subsection{Function Documentation}
+\hypertarget{_data_8py_file_a3fa8b667fa1263fed09ee5d1d08d2e60}{}\label{_data_8py_file_a3fa8b667fa1263fed09ee5d1d08d2e60} 
+\index{Data.\+py@{Data.\+py}!analyse@{analyse}}
+\index{analyse@{analyse}!Data.\+py@{Data.\+py}}
+\subsubsection{\texorpdfstring{analyse()}{analyse()}}
+{\footnotesize\ttfamily def Data.\+analyse (\begin{DoxyParamCaption}\item[{}]{version,  }\item[{}]{ecl,  }\item[{}]{input\+String }\end{DoxyParamCaption})}
+
+
+
+Method to determine the appropriate mode and version for a QR code. 
+
+Method accepts three parameters, and determines the appropriate version given a desired version and error correction level. If the given version is too small to hold the data, an appropriate one is selected. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the desired size of the QR code. \\
+\hline
+{\em ecl} & Accepts one of four values\+: \textquotesingle{}L\textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}Q\textquotesingle{}, \textquotesingle{}H\textquotesingle{} that specify the level of error correction to be encoded. \\
+\hline
+{\em input\+String} & Accepts an input string to be encoded into data bits for a QR code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Appropriate version 
+\end{DoxyReturn}
+\hypertarget{_data_8py_file_a2436ae57e24ed63ba806939a94d2645b}{}\label{_data_8py_file_a2436ae57e24ed63ba806939a94d2645b} 
+\index{Data.\+py@{Data.\+py}!bin\+String@{bin\+String}}
+\index{bin\+String@{bin\+String}!Data.\+py@{Data.\+py}}
+\subsubsection{\texorpdfstring{bin\+String()}{binString()}}
+{\footnotesize\ttfamily def Data.\+bin\+String (\begin{DoxyParamCaption}\item[{}]{data,  }\item[{}]{length }\end{DoxyParamCaption})}
+
+
+
+Method to create a suitable binary string for given data. 
+
+Method accepts two parameters. 
+\begin{DoxyParams}{Parameters}
+{\em data} & Accepts an integer or string to be converted. \\
+\hline
+{\em length} & Accepts an integer that specifies the length of string to be generated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a converted binary string of appropriate length. 
+\end{DoxyReturn}
+\hypertarget{_data_8py_file_a5ff355345294176164aa59312fd87f70}{}\label{_data_8py_file_a5ff355345294176164aa59312fd87f70} 
+\index{Data.\+py@{Data.\+py}!byte\+Encoding@{byte\+Encoding}}
+\index{byte\+Encoding@{byte\+Encoding}!Data.\+py@{Data.\+py}}
+\subsubsection{\texorpdfstring{byte\+Encoding()}{byteEncoding()}}
+{\footnotesize\ttfamily def Data.\+byte\+Encoding (\begin{DoxyParamCaption}\item[{}]{input\+String }\end{DoxyParamCaption})}
+
+
+
+Method to encode the Input String as byte code. 
+
+The U\+RL or input string entered is assumed to be of \textquotesingle{}byte\textquotesingle{} mode. Each char in the input string is encoded into a byte code. 
+\begin{DoxyParams}{Parameters}
+{\em input\+String} & Accepts an input string to be encoded into data bits for a QR code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+byte code string representing input string/url 
+\end{DoxyReturn}
+\hypertarget{_data_8py_file_abd52a8291056e8a033c5d8ad8f5dded5}{}\label{_data_8py_file_abd52a8291056e8a033c5d8ad8f5dded5} 
+\index{Data.\+py@{Data.\+py}!get\+Data\+Bits@{get\+Data\+Bits}}
+\index{get\+Data\+Bits@{get\+Data\+Bits}!Data.\+py@{Data.\+py}}
+\subsubsection{\texorpdfstring{get\+Data\+Bits()}{getDataBits()}}
+{\footnotesize\ttfamily def Data.\+get\+Data\+Bits (\begin{DoxyParamCaption}\item[{}]{version,  }\item[{}]{ecl,  }\item[{}]{mode,  }\item[{}]{input\+String }\end{DoxyParamCaption})}
+
+
+
+Method to obtain data bits for a QR code. 
+
+\begin{DoxyDate}{Date}
+2/11/2016
+\end{DoxyDate}
+Method accepts four parameters. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em ecl} & Accepts one of four values\+: \textquotesingle{}L\textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}Q\textquotesingle{}, \textquotesingle{}H\textquotesingle{} that specify the level of error correction to be encoded. \\
+\hline
+{\em mode} & Accepts one of four values\+: N\+U\+M\+E\+R\+IC, A\+L\+P\+H\+A\+N\+U\+M\+E\+R\+IC, B\+Y\+TE, K\+A\+N\+JI that specify the acceptable characters and encoding mode for the QR code. \\
+\hline
+{\em input\+String} & Accepts an input string to be encoded into data bits for a QR code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encoded data bits. Method accepts four parameters version\+: QR code version ecl\+: QR code error correction level mode\+: QR code encoding mode input\+String\+: String to be encoded. 
+\end{DoxyReturn}

@@ -1,0 +1,106 @@
+\hypertarget{_structure_8py}{}\section{Structure.\+py File Reference}
+\label{_structure_8py}\index{Structure.\+py@{Structure.\+py}}
+
+
+Structure  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{_structure_8py_afe78733d5f7a4628284efd753b3332ef}{Structure.\+get\+Final\+Data} (version, ecl, data\+Codewords, error\+Codewords)
+\begin{DoxyCompactList}\small\item\em Method to structure final data. \end{DoxyCompactList}\item 
+def \hyperlink{_structure_8py_a6f656c919a7305cdb02763b0a2d7411e}{Structure.\+interleave\+Data} (version, ecl, data\+Codewords)
+\begin{DoxyCompactList}\small\item\em Method to interleave data codewords. \end{DoxyCompactList}\item 
+def \hyperlink{_structure_8py_a3e0a0ebc2e29520a89c65ad858e98ad3}{Structure.\+interleave\+Error} (error\+Codewords)
+\begin{DoxyCompactList}\small\item\em Method to interleave error codewords. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure 
+
+\begin{DoxyDate}{Date}
+4/11/2016 This class handles interleaving of data codewords and error correction codewords.
+\end{DoxyDate}
+This class interleaves the generated data codewords and error correction codewords by QR code standards before the data is placed in the matrix.~\newline
+ State variables\+: none~\newline
+
+\begin{DoxyCode}
+finalData = \hyperlink{_structure_8py_afe78733d5f7a4628284efd753b3332ef}{Structure.getFinalData}(30, \textcolor{stringliteral}{'M'}, dataCodewords, errorCodewords)
+\end{DoxyCode}
+ 
+
+\subsection{Function Documentation}
+\hypertarget{_structure_8py_file_afe78733d5f7a4628284efd753b3332ef}{}\label{_structure_8py_file_afe78733d5f7a4628284efd753b3332ef} 
+\index{Structure.\+py@{Structure.\+py}!get\+Final\+Data@{get\+Final\+Data}}
+\index{get\+Final\+Data@{get\+Final\+Data}!Structure.\+py@{Structure.\+py}}
+\subsubsection{\texorpdfstring{get\+Final\+Data()}{getFinalData()}}
+{\footnotesize\ttfamily def Structure.\+get\+Final\+Data (\begin{DoxyParamCaption}\item[{}]{version,  }\item[{}]{ecl,  }\item[{}]{data\+Codewords,  }\item[{}]{error\+Codewords }\end{DoxyParamCaption})}
+
+
+
+Method to structure final data. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts four parameters. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em ecl} & Accepts one of four values\+: \textquotesingle{}L\textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}Q\textquotesingle{}, \textquotesingle{}H\textquotesingle{} that specify the level of error correction to be encoded. \\
+\hline
+{\em data\+Codewords} & Accepts an array containing arrays of data codewords representing blocks. \\
+\hline
+{\em error\+Codewords} & Accepts an array containing error correction codewords. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Final binary string representing the data. 
+\end{DoxyReturn}
+\hypertarget{_structure_8py_file_a6f656c919a7305cdb02763b0a2d7411e}{}\label{_structure_8py_file_a6f656c919a7305cdb02763b0a2d7411e} 
+\index{Structure.\+py@{Structure.\+py}!interleave\+Data@{interleave\+Data}}
+\index{interleave\+Data@{interleave\+Data}!Structure.\+py@{Structure.\+py}}
+\subsubsection{\texorpdfstring{interleave\+Data()}{interleaveData()}}
+{\footnotesize\ttfamily def Structure.\+interleave\+Data (\begin{DoxyParamCaption}\item[{}]{version,  }\item[{}]{ecl,  }\item[{}]{data\+Codewords }\end{DoxyParamCaption})}
+
+
+
+Method to interleave data codewords. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts three parameters. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em ecl} & Accepts one of four values\+: \textquotesingle{}L\textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}Q\textquotesingle{}, \textquotesingle{}H\textquotesingle{} that specify the level of error correction to be encoded. \\
+\hline
+{\em data\+Codewords} & Accepts an array containing arrays of data codewords representing blocks. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an array containing the interleaved data codewords. 
+\end{DoxyReturn}
+\hypertarget{_structure_8py_file_a3e0a0ebc2e29520a89c65ad858e98ad3}{}\label{_structure_8py_file_a3e0a0ebc2e29520a89c65ad858e98ad3} 
+\index{Structure.\+py@{Structure.\+py}!interleave\+Error@{interleave\+Error}}
+\index{interleave\+Error@{interleave\+Error}!Structure.\+py@{Structure.\+py}}
+\subsubsection{\texorpdfstring{interleave\+Error()}{interleaveError()}}
+{\footnotesize\ttfamily def Structure.\+interleave\+Error (\begin{DoxyParamCaption}\item[{}]{error\+Codewords }\end{DoxyParamCaption})}
+
+
+
+Method to interleave error codewords. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts one parameter. 
+\begin{DoxyParams}{Parameters}
+{\em error\+Codewords} & Accepts an array containing error correction codewords. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an array containing the interleaved data codewords. 
+\end{DoxyReturn}

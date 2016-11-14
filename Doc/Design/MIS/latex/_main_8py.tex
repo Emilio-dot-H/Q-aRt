@@ -1,0 +1,58 @@
+\hypertarget{_main_8py}{}\section{Main.\+py File Reference}
+\label{_main_8py}\index{Main.\+py@{Main.\+py}}
+
+
+Main  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{_main_8py_a1a846af721c6dfd1687633b2ab717132}{Main.\+run} (input\+String, version, ecl, picture, colorized, contrast, brightness, save\+Name, save\+Directory)
+\begin{DoxyCompactList}\small\item\em Method to create QR code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main 
+
+\begin{DoxyDate}{Date}
+2/11/2016 This class takes input to generate a QR code
+\end{DoxyDate}
+State variables\+: none 
+
+\subsection{Function Documentation}
+\hypertarget{_main_8py_file_a1a846af721c6dfd1687633b2ab717132}{}\label{_main_8py_file_a1a846af721c6dfd1687633b2ab717132} 
+\index{Main.\+py@{Main.\+py}!run@{run}}
+\index{run@{run}!Main.\+py@{Main.\+py}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily def Main.\+run (\begin{DoxyParamCaption}\item[{}]{input\+String,  }\item[{}]{version,  }\item[{}]{ecl,  }\item[{}]{picture,  }\item[{}]{colorized,  }\item[{}]{contrast,  }\item[{}]{brightness,  }\item[{}]{save\+Name,  }\item[{}]{save\+Directory }\end{DoxyParamCaption})}
+
+
+
+Method to create QR code. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts nine parameters. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em ecl} & Accepts one of four values\+: \textquotesingle{}L\textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}Q\textquotesingle{}, \textquotesingle{}H\textquotesingle{} that specify the level of error correction to be encoded. \\
+\hline
+{\em picture} & Accepts the file location of an image to combine \\
+\hline
+{\em colorized} & Accepts a boolean indicating whether or not the output will be in colour \\
+\hline
+{\em contrast} & Accepts an integer indicating the cotrast level \\
+\hline
+{\em brightness} & Accepts an integer indicating the brightness level \\
+\hline
+{\em save\+Name} & Accepts a string containing the desired save name for the finished qr code \\
+\hline
+{\em save\+Directory} & Accpets a string contating the desired save location for the finished qr code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Final binary string representing the data. 
+\end{DoxyReturn}
