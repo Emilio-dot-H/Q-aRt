@@ -17,6 +17,9 @@
 #   finalData = Structure.getFinalData(30, 'M', dataCodewords, errorCodewords)
 # @endcode
 
+# @uses Constant.py
+import Constant
+
 ## @brief Method to structure final data.
 #  @date 4/11/2016
 #  @details Method accepts four parameters. 
