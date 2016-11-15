@@ -18,6 +18,9 @@
 #   data = Data.getDataBits(5,'H',BYTE, inputString)
 # @endcode		
 
+# @uses Constant.py
+import Constant
+
 ## @brief Method to obtain data bits for a QR code.
 #  @date 2/11/2016
 #  @details Method accepts four parameters. 
