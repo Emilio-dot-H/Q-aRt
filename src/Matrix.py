@@ -16,6 +16,9 @@
 #   QRMatrix = Matrix.getMatrix(2, 'L', finalData)
 # @endcode
 
+# @uses Constant.py
+import Constant
+
 ## @brief Method to get the matrix representing the final QR code.
 #  @date 4/11/2016
 #  @details Method accepts three parameters.
