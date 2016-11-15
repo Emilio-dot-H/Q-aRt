@@ -39,7 +39,7 @@ import Constant
 #  ecl: QR code error correction level
 #  mode: QR code encoding mode
 #  inputString: String to be encoded.
-def getDataBits(version, ecl, mode, inputString):
+def getDataBits(version, ecl, inputString):
     pass
 
 ## @brief Method to create a suitable binary string for given data.
