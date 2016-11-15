@@ -18,6 +18,9 @@
 #   codewords = ECC.getCodewords(1, 'Q', data)
 # @endcode
 
+# @uses Constant.py
+import Constant
+
 ## @brief Method to obtain error correction codewords.
 #  @date 2/11/2016
 #  @details Method accepts three parameters
