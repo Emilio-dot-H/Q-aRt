@@ -18,6 +18,9 @@
 #   image = Draw.drawQRCode(absPath, qrmatrix)
 # @endcode
 
+# @uses Constant.py
+import Constant
+
 ## @brief Method to create a PNG from the generate matrix at the given
 #  file location.
 #  @details Method accepts two parameters.
