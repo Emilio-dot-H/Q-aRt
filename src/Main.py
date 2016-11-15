@@ -11,6 +11,17 @@
 # @details
 # State variables: none
 
+# @uses Data.py
+# @uses Draw.py
+# @uses ECC.py
+# @uses Matrix.py
+# @uses Structure.py
+import Data
+import Draw
+import ECC
+import Matrix
+import Structure
+
 ## @brief Method to create QR code
 #  @date 4/11/2016
 #  @details Method accepts nine parameters. 
