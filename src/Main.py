@@ -16,11 +16,7 @@
 # @uses ECC.py
 # @uses Matrix.py
 # @uses Structure.py
-import Data
-import Draw
-import ECC
-import Matrix
-import Structure
+import Data, Draw, ECC, Matrix, Structure
 
 ## @brief Method to create QR code
 #  @date 4/11/2016
@@ -35,5 +31,44 @@ import Structure
 #  @param saveName Accepts a string containing the desired save name for the finished qr code
 #  @param saveDirectory Accpets a string contating the desired save location for the finished qr code
 #  @return Final binary string representing the data.
-def run(inputString, version, ecl, picture, colorized, contrast, brightness, saveName, saveDirectory):
-	pass
+def run(inputString, version = 1, ecl = 'H', picture = None, colorized = False, contrast = 1.0, brightness = 1.0, saveName = None, saveDirectory = os.getcwd()):
+	supported_chars = r"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ··,.:;+-*/\~!@#$%^&`'=<>[]()?_{}|"
+     
+    
+    # check every parameter
+    if not isinstance(inputString, str) or any(i not in supported_chars for i in inputString):
+        raise ValueError('String characters unsupported!')
+    if not isinstance(version, int) or version not in range(1, 41):
+        raise ValueError('Invalid version! Enter an integer betwwen 1 and 40.')
+    if not isinstance(ecl, str) or len(ecl)>1 or ecl not in 'LMQH':
+        raise ValueError("Invalid error corection level! Enter one of the following options: L, M, Q, H.")
+    if picture:
+        if not isinstance(picture, str) or not os.path.isfile(picture) or picture[-4:] not in ('.jpg','.png','.bmp','.gif'):
+            raise ValueError("Invalid image! Make sure the image exists and that it has one of the folloeing formats: .jpg, .png, .bmp, .gif .")
+        if picture[-4:] == '.gif' and saveName and saveName[-4:] != '.gif':
+            raise ValueError('Invalid file type! If the input image is a .gif, the output image must be as well.')
+        if not isinstance(colorized, bool):
+            raise ValueError('Invalid colorized! Please enter a boolean value: True, False.')
+        if not isinstance(contrast, float):
+            raise ValueError('Invalid contrast! Please enter a float value.')
+        if not isinstance(brightness, float):
+            raise ValueError('Invalid brightness! Please enter a float value.')
+    if saveName and (not isinstance(saveName, str) or saveName[-4:] not in ('.jpg','.png','.bmp','.gif')):
+        raise ValueError("Invalid save name! Input a filename tailed with one of .jpg, .png, .bmp, .gif.")
+    if not os.path.isdir(saveDirectory):
+        raise ValueError('Invalid save directory! Please enter an existing directory!')
+	
+	# Get encoded data
+	version, data = Data.getDataBits(version, ecl, mode, inputString)
+	
+	# Get error correction codewords
+	ecc = ECC.getCodewords(version, ecl, data)
+	
+	# Structure final bits
+    finalBits = Structure.getFinalData(version, ecl, dataCodewords, errorCodewords)
+    
+    # Create QR matrix
+    qrmatrix = Matrix.getMatrix(version, ecl, finalBits)
+    
+    # Draw QR code
+    Draw.drawQRCode(saveDirectory, qrmatrix)
