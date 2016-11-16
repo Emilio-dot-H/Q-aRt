@@ -54,6 +54,8 @@
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 08/11/16 & 1.0 & Basic design information\\
+15/11/16 & 1.1 & Revision 0\\
+
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -134,15 +136,13 @@ The system consists of 7 modules including 'Main.py'. The modules listed below a
 \section{Connection Between Requirements and Design} \label{SecConnection}
 
 \paragraph{}
-We dedicated a module aptly named GUI to cover and contain R3 entirely. 
-We also made the input for the entire program simultaneous to combine couplings
-with the new GUI (which was not part of the original project). We also 
+R3 is satisfied by the Terminal module, which mimics the shell interface of the original project. We also 
 decided to fill R4 through user input of desired size and error correction level.
 This general interface will also cover R9, and will comply with R7.
 
 \paragraph{}
 In the case of input rejection we decided to fulfill the input check as soon as it is 
-recieved from the GUI. To do this we simply layed the light check-code in the main function.
+recieved. To do this we simply layed the light check-code in the main function.
 This set of checks encompasses solutions to R5, R6, R8 and R15.
 
 \paragraph{}
