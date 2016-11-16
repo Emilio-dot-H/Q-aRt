@@ -17,7 +17,7 @@
 # @endcode
 
 # @uses Constant.py
-import Constant
+from Constant import alig_location, format_info_str, version_info_str, lindex
 
 ## @brief Method to get the matrix representing the final QR code.
 #  @date 4/11/2016

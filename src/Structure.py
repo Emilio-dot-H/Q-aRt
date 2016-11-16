@@ -18,7 +18,7 @@
 # @endcode
 
 # @uses Constant.py
-import Constant
+from Constant import required_remainder_bits, lindex, grouping_list
 
 ## @brief Method to structure final data.
 #  @date 4/11/2016
@@ -30,8 +30,13 @@ import Constant
 #  representing blocks.
 #  @param errorCodewords Accepts an array containing error correction codewords.
 #  @return Final binary string representing the data.
-def getFinalData(version, ecl, dataCodewords, errorCodewords):
-    pass
+def getFinalData(version, ecl, dataCodewords, errorCorrectionCodewords):
+    reorderedData = interleaveData(version, ecl, dataCodewords) + interleaveError(errorCorrectionCodewords)
+    
+    # convert to binary & Add Remainder Bits if Necessary
+    finalData = ''.join(['0'*(8-len(i))+i for i in [bin(i)[2:] for i in reorderedData]]) + '0' * required_remainder_bits[version-1]
+    
+    return finalData
 
 ## @brief Method to interleave data codewords.
 #  @date 4/11/2016
@@ -43,7 +48,14 @@ def getFinalData(version, ecl, dataCodewords, errorCodewords):
 #  representing blocks.
 #  @return Returns an array containing the interleaved data codewords.
 def interleaveData(version, ecl, dataCodewords):
-    pass
+    data = []
+    for t in zip(*dataCodewords):
+        data += list(t)
+    groups = grouping_list[version-1][lindex[ecl]]
+    if groups[3]:
+        for i in range(groups[2]):
+            data.append(dataCodewords[i-groups[2]][-1])
+    return data
 
 ## @brief Method to interleave error codewords.
 #  @date 4/11/2016
@@ -51,4 +63,7 @@ def interleaveData(version, ecl, dataCodewords):
 #  @param errorCodewords Accepts an array containing error correction codewords.
 #  @return Returns an array containing the interleaved data codewords.
 def interleaveError(errorCodewords):
-    pass
+    error = []
+    for t in zip(*errorCodewords):
+        error += list(t)
+    return error
