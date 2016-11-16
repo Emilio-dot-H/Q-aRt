@@ -39,6 +39,7 @@
 \midrule
 2016/10/11 & 1.0 & Revision 0\\
 2016/11/09 & 1.1 & Revision 1\\
+2016/11/15 & 1.2 & Revision 2\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -98,8 +99,7 @@ template~\citep{RobertsonAndRobertson2012}.
 
 \subsection{Mandated Constraints}
 
-	The system should be an executable desktop program. It should run on a (at 
-	least one) Windows 10 computer. Other systems are not required but are 
+	The system should run on a (at least one) Windows 10 computer. Other operating systems are not required but are 
 	expected to be applicable. The system must be completed by December 2016.
 
 \subsection{Naming Conventions and Terminology}
@@ -159,26 +159,26 @@ template~\citep{RobertsonAndRobertson2012}.
 \subsection{Functional Requirements}
 
 	\paragraph{R1}
-	System must accept image files of the format JPEG or PNG.
+	System must accept image files of the format JPEG, PNG or GIF.
 	\paragraph{R2}
-	System must output a Portable Network Graphic (.png) file. No other file 
+	System must output a Portable Network Graphic (.png) or Graphics Interchange Format (.gif) file. No other file 
 	formats are acceptable. 
 	\paragraph{R3}
-	System must have a GUI allowing the user to input an ascii string to 
-	encode into a QR Code, and allowing the input of an image or no image if 
-	desired to create an artistic QR Code or a standard QR Code if no image.
+	System must allow the user to input an ascii string to 
+	encode into a QR Code, and to input of an image, or no image if so 
+	desired, to create an artistic QR Code or a standard QR Code if no image is chosen.
 	\paragraph{R4}
 	System must generate an appropriately versioned QR code based on the number of 
 	characters in the user input text string (versions 1 to 40) and error 
 	correction level (L,M,Q, or H).
 	\paragraph{R5}
-	System must not allow the user to enter a string that contains unsupported 
+	System must not allow the user to enter generate with a string that contains unsupported 
 	characters for the alphanumeric mode of QR encoding, and must prevent the 
 	user from entering a string of more than MAXIMUM characters.
 	\paragraph{R6}	
-	When a non compatible file is chosen, there must be a visible warning. The 
+	When a non compatible file is chosen, there must be a warning message. The 
 	warning explains the allowed formats and only allows acceptance. The 
-	acceptance brings the GUI back to the original “browse for a file” state.
+	acceptance brings the system back to the original state.
 	
 	
 
@@ -186,7 +186,7 @@ template~\citep{RobertsonAndRobertson2012}.
 
 \subsection{Look and Feel Requirements}
 	
-	 \paragraph{R7}The system must have a simple, intuitive interface.
+	 \paragraph{R7}The system must have a simple interface.
 	
 	
 \subsection{Usability and Humanity Requirements}
@@ -195,7 +195,7 @@ template~\citep{RobertsonAndRobertson2012}.
 	The system must notify the user when an invalid input is entered for either 
 	the text or image.
     \paragraph{R9}
-	the system must prompt the user for an appropriate input in the GUI, to 
+	the system must prompt the user for an appropriate input to 
 	remove confusion about the requested input for the field.
 
 \subsection{Performance Requirements}
@@ -230,7 +230,7 @@ template~\citep{RobertsonAndRobertson2012}.
 
 \subsection{Security Requirements}
 
-	None.
+	None. The user encodes private messages or images at their own risk.
 
 \subsection{Cultural Requirements}
 
@@ -253,10 +253,9 @@ template~\citep{RobertsonAndRobertson2012}.
 
 \subsection{Open Issues}
 
-	The process of encoding a QR code from an alphanumeric string has not been 
-	fully researched by the group. This may slow down the implementation of the 
-	software. The software also requires the use of a few Python libraries 
-	which the group is not entirely familiar with at this point.
+	Not all group members yet have an in depth understanding of every process which
+	is used in the complex proccess of creating a working QR Code. We hope to 
+	fill these remaining spaces in knowledge during the revision process.
 
 \subsection{Off-the-Shelf Solutions}
 
@@ -273,11 +272,7 @@ template~\citep{RobertsonAndRobertson2012}.
 
 \subsection{Tasks}
 
-	At this stage, a proof of concept demo is in development that will create 
-	one size of QR code from an alphanumeric string without the artistic 
-	component. In parallel to this, a testing plan, and a Gantt chart are being 
-	constructed and modified. All these and this requirements document will 
-	continue to be refined throughout the development process.
+	Final testing for robustness and possible shortcoming is underway.
 
 \subsection{Migration to the New Product}
 
@@ -303,9 +298,9 @@ template~\citep{RobertsonAndRobertson2012}.
 	The software as intended will not require extensive training if any, as the 
 	only knowledge required to use the software is basic knowledge of the file 
 	explorer to select input images, as well as to retrieve generated QR codes, 
-	and basic knowledge on URLs. Documentation is an important part of the 
+	and common knowledge on URLs. Documentation is an important part of the 
 	redevelopment of this project and as such there will be an ample amount of 
-	documentation that will be available to the user if required.
+	documentation that will be available to the user in the less likely case that it is required.
 
 \subsection{Waiting Room}
 	
