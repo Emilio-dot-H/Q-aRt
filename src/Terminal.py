@@ -19,7 +19,7 @@ def main():
     args = argparser.parse_args()
     
     if args.picture and args.picture[-4:]=='.gif':
-        print('It may take a while, please wait for minutes...')
+        print('It may take a while, please be patient...')
     
     try:
         ver, ecl, qr_name = run(
