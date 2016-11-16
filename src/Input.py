@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Input Module
 # Author: Elton Kjeld Schiott
 # This class takes input to generate a QR code
@@ -33,7 +34,7 @@ from PIL import Image
 #  @param saveDirectory Accpets a string contating the desired save location for the finished qr code
 #  @return Final binary string representing the data.
 def run(inputString, version = 1, ecl = 'H', picture = None, colorized = False, contrast = 1.0, brightness = 1.0, saveName = None, saveDirectory = os.getcwd()):
-	supported_chars = r"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ··,.:;+-*/\~!@#$%^&`'=<>[]()?_{}|"
+	supported_chars = r"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz Â·Â·,.:;+-*/\~!@#$%^&`'=<>[]()?_{}|"
      
     
 	# check every parameter
