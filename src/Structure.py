@@ -48,14 +48,14 @@ def getFinalData(version, ecl, dataCodewords, errorCorrectionCodewords):
 #  representing blocks.
 #  @return Returns an array containing the interleaved data codewords.
 def interleaveData(version, ecl, dataCodewords):
-    data = []
-    for t in zip(*dataCodewords):
-        data += list(t)
-    groups = grouping_list[version-1][lindex[ecl]]
-    if groups[3]:
-        for i in range(groups[2]):
-            data.append(dataCodewords[i-groups[2]][-1])
-    return data
+	data = []
+	for t in zip(*dataCodewords):
+		data += list(t)
+	groups = grouping_list[version-1][lindex[ecl]]
+	if groups[3]:
+		for i in range(groups[2]):
+			data.append(dataCodewords[i-groups[2]][-1])
+	return data
 
 ## @brief Method to interleave error codewords.
 #  @date 4/11/2016
@@ -63,7 +63,7 @@ def interleaveData(version, ecl, dataCodewords):
 #  @param errorCodewords Accepts an array containing error correction codewords.
 #  @return Returns an array containing the interleaved data codewords.
 def interleaveError(errorCodewords):
-    error = []
-    for t in zip(*errorCodewords):
-        error += list(t)
-    return error
+	error = []
+	for t in zip(*errorCodewords):
+		error += list(t)
+	return error

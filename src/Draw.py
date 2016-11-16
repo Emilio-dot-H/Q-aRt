@@ -1,5 +1,5 @@
 # Image Drawing/Exporting Module
-# Author: Elton Kjeld Schiott
+# Author: Elton Kjeld Schiott, sylnsfar
 # This class generates a PNG image file representing the data contained
 # in the QR code matrix.
 ## @mainpage Mainpage
@@ -18,17 +18,36 @@
 #   image = Draw.drawQRCode(absPath, qrmatrix)
 # @endcode
 
-# @uses Constant.py
-import Constant
+from PIL import Image
+import os
 
 ## @brief Method to create a PNG from the generate matrix at the given
 #  file location.
+#  @author sylnsfar
 #  @details Method accepts two parameters.
 #  @param absPath Accepts a string indicating the desired save directory
 #  @param qrmatrix Accepts a 2D array representing the QR code matrix.
 #  @return Saves a PNG file to the absPath directory
 def drawQRCode(absPath, qrmatrix):
-	pass
+	unit_len = 3
+	x = y = 4*unit_len
+	pic = Image.new('1', [(len(qrmatrix)+8)*unit_len]*2, 'white')
+    
+	for line in qrmatrix:
+		for module in line:
+			if module:
+				draw_a_black_unit(pic, x, y, unit_len)
+			x += unit_len
+		x, y = 4*unit_len, y+unit_len
+
+	saving = os.path.join(absPath, 'qrcode.png')
+	pic.save(saving)
+	return saving
+
+def draw_a_black_unit(p, x, y, ul):
+    for i in range(ul):
+        for j in range(ul):
+            p.putpixel((x+i, y+j), 0)
 	
 ## @brief Method to combine QR code with another image
 #  @details Method accepts two parameters.
@@ -36,5 +55,39 @@ def drawQRCode(absPath, qrmatrix):
 #  @param qrPath Accepts a string indicating the location of the qr code
 #  @param imagePath Accepts a string indicating the location of the image
 #  @return Saves a PNG file to the absPath directory
-def combine(absPath, qrPath, imagePath):
-	pass
+def combine(ver, qr_name, bg_name, colorized, contrast, brightness, save_dir, save_name=None):
+		from Constant import alig_location
+		from PIL import ImageEnhance, ImageFilter
+        
+		qr = Image.open(qr_name)
+		qr = qr.convert('RGBA') if colorized else qr
+        
+		bg0 = Image.open(bg_name).convert('RGBA')
+		bg0 = ImageEnhance.Contrast(bg0).enhance(contrast)
+		bg0 = ImageEnhance.Brightness(bg0).enhance(brightness)
+
+		if bg0.size[0] < bg0.size[1]:
+			bg0 = bg0.resize((qr.size[0]-24, (qr.size[0]-24)*int(bg0.size[1]/bg0.size[0])))
+		else:
+			bg0 = bg0.resize(((qr.size[1]-24)*int(bg0.size[0]/bg0.size[1]), qr.size[1]-24))    
+            
+		bg = bg0 if colorized else bg0.convert('1')
+        
+		aligs = []
+		if ver > 1:
+			aloc = alig_location[ver-2]
+			for a in range(len(aloc)):
+				for b in range(len(aloc)):
+					if not ((a==b==0) or (a==len(aloc)-1 and b==0) or (a==0 and b==len(aloc)-1)):
+						for i in range(3*(aloc[a]-2), 3*(aloc[a]+3)):
+							for j in range(3*(aloc[b]-2), 3*(aloc[b]+3)):
+								aligs.append((i,j))
+
+		for i in range(qr.size[0]-24):
+			for j in range(qr.size[1]-24):
+				if not ((i in (18,19,20)) or (j in (18,19,20)) or (i<24 and j<24) or (i<24 and j>qr.size[1]-49) or (i>qr.size[0]-49 and j<24) or ((i,j) in aligs) or (i%3==1 and j%3==1) or (bg0.getpixel((i,j))[3]==0)):
+					qr.putpixel((i+12,j+12), bg.getpixel((i,j)))
+        
+		qr_name = os.path.join(save_dir, os.path.splitext(os.path.basename(bg_name))[0] + '_qrcode.png') if not save_name else os.path.join(save_dir, save_name)
+		qr.resize((qr.size[0]*3, qr.size[1]*3)).save(qr_name)
+		return qr_name
