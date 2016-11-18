@@ -32,7 +32,7 @@ class Application(Frame):
 	    self.picture = Entry(self)
 	    self.picture.grid(row =8, column =1, rowspan = 1, sticky=W)
 
-	    self.instruction = Label(self, text = "Enter Color")
+	    self.instruction = Label(self, text = "Select for color")
 	    self.instruction.grid(row=9, column=1, columnspan = 2, rowspan = 1, sticky = W)
 	    self.colVar = BooleanVar()
 	    self.colorized = Checkbutton(self, variable = self.colVar)
