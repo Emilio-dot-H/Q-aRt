@@ -17,7 +17,7 @@
 # @uses ECC.py
 # @uses Matrix.py
 # @uses Structure.py
-import Data, Draw, ECC, Matrix, Structure
+import Data, Draw, ECC, Matrix, Structure #, GUI
 import os
 from PIL import Image
 ## @brief Method to create QR code
@@ -33,6 +33,7 @@ from PIL import Image
 #  @param saveName Accepts a string containing the desired save name for the finished qr code
 #  @param saveDirectory Accpets a string contating the desired save location for the finished qr code
 #  @return Final binary string representing the data.
+
 def run(inputString, version = 1, ecl = 'H', picture = None, colorized = False, contrast = 1.0, brightness = 1.0, saveName = None, saveDirectory = os.getcwd()):
 	supported_chars = r"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz Â·Â·,.:;+-*/\~!@#$%^&`'=<>[]()?_{}|"
      
@@ -40,8 +41,8 @@ def run(inputString, version = 1, ecl = 'H', picture = None, colorized = False, 
 	# check every parameter
 	if not isinstance(inputString, str) or any(i not in supported_chars for i in inputString):
 		raise ValueError('String characters unsupported!')
-	if not isinstance(version, int) or version not in range(1, 41):
-		raise ValueError('Invalid version! Enter an integer betwwen 1 and 40.')
+	if (not isinstance(version, int)) or (version not in range(1, 41)):
+		raise ValueError('Invalid version! Enter an integer between 1 and 40.')
 	if not isinstance(ecl, str) or len(ecl)>1 or ecl not in 'LMQH':
 		raise ValueError("Invalid error corection level! Enter one of the following options: L, M, Q, H.")
 	if picture:
