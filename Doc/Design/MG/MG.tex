@@ -142,7 +142,7 @@ This general interface will also cover R9, and will comply with R7.
 
 \paragraph{}
 In the case of input rejection we decided to fulfill the input check as soon as it is 
-recieved. To do this we simply layed the light check-code in the main function.
+recieved. To do this we simply layed the light check-code in the Input module.
 This set of checks encompasses solutions to R5, R6, R8 and R15.
 
 \paragraph{}
@@ -157,7 +157,7 @@ remaining creations faster but will certainly cut down on program size.
 
 \subsection{Behaviour-Hiding Module}
 
-\subsubsection{Main (M1)}
+\subsubsection{Main (Composed of Terminal, Input submodules) (M1)}
 
 \begin{description}
 \item[Secrets:] The format and structure of the input data.
@@ -261,7 +261,10 @@ UC2 & M4\\
 
 \section{Use Hierarchy Between Modules} \label{SecUse}
 
-Main USES Data, Structure, ECC, Matrix\\
+Main(//
+Terminal (or experimental GUI) USES Input\\
+Input USES Data, Structure, ECC, Matrix\\
+)//
 Data, Structure, ECC, Matrix USES Constant\\
 
 The process of QR Code generation and image combination is essentially linear 
@@ -269,7 +272,7 @@ and should be completely dictated by the original input. The main method calls
 all modules other than Constant as libraries in turn to process the element being
 created. Constant is a library of raw data, integers and standard values, that 
 are used for various subtasks throughout the linear process. Because of this, the 
-modular heirarchy percolates at both ends into Main at the top and Constants at 
+modular heirarchy percolates at both ends into an Input, Terminal funnel at the top and Constants at 
 the bottom, with all other modules on the same center level and all connected 
 to each point of percolation.
 
