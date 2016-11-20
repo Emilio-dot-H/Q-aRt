@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from tkinter import *
+from tkinter import ttk
 from Input import run
 import os
 
@@ -16,54 +17,57 @@ class Application(Frame):
 	    self.photo = PhotoImage(file = "Icons/logo.png")
 	    self.logo = Label(self, image = self.photo)
 	    self.logo.pack()
-	    self.instruction = Label(self, text = "Enter URL/Message", bg = '#8a8ac0')
+	    self.instruction = Label(self, text = "Enter URL/Message", bg = '#8a8ac0', font = ("arial", 11))
 	    self.instruction.pack()
-	    self.words = Entry(self, width = 30)
+	    self.words = Entry(self, width = 40, bg = '#e1e281')
 	    self.words.pack()
 
-	    self.instruction = Label(self, text = "Enter Version (1-41)", bg = '#8a8ac0')
+	    self.instruction = Label(self, text = "Enter Version (1-41)", bg = '#8a8ac0', font = ("arial", 11))
 	    self.instruction.pack()
-	    self.version = Entry(self, width = 30)
+	    self.version = Entry(self, width = 40, bg = '#e1e281')
 	    self.version.pack()
 
-	    self.instruction = Label(self, text = "Enter Level (L, M, Q, H)", bg = '#8a8ac0')
+	    self.instruction = Label(self, text = "Enter Level (L, M, Q, H)", bg = '#8a8ac0', font = ("arial", 11))
 	    self.instruction.pack()
-	    self.level = Entry(self, width = 30)
+	    self.level = Entry(self, width = 40, bg = '#e1e281')
 	    self.level.pack()
 
-	    self.instruction = Label(self, text = "Enter Media (png, jpg or gif)", bg = '#8a8ac0')
+	    self.instruction = Label(self, text = "Enter Media (png, jpg or gif)", bg = '#8a8ac0', font = ("arial", 11))
 	    self.instruction.pack()
-	    self.picture = Entry(self, width = 30)
+	    self.picture = Entry(self, width = 40, bg = '#e1e281')
 	    self.picture.pack()
 
 	    self.colVar = BooleanVar()
-	    self.colorized = Checkbutton(self,text = "Select For Color", variable = self.colVar, bg = '#8a8ac0')
+	    self.colorized = Checkbutton(self, activebackground= '#e1e281', bd=5, selectcolor= '#e1e281', text = "Select For Color", variable = self.colVar, bg = '#8a8ac0', font = ("arial", 11))
 	    self.colorized.pack()
 
-	    self.instruction = Label(self, text = "Enter Contrast (Default: 1.0)", bg = '#8a8ac0')
+	    self.instruction = Label(self, text = "Enter Contrast (Default: 1.0)", bg = '#8a8ac0', font = ("arial", 11))
 	    self.instruction.pack()
-	    self.contrast = Entry(self, width = 30)
+	    self.contrast = Entry(self, width = 40, bg = '#e1e281')
 	    self.contrast.pack()
 
-	    self.instruction = Label(self, text = "Enter Brightness (Default: 1.0)", bg = '#8a8ac0')
+	    self.instruction = Label(self, text = "Enter Brightness (Default: 1.0)", bg = '#8a8ac0', font = ("arial", 11))
 	    self.instruction.pack()
-	    self.brightness = Entry(self, width = 30)
+	    self.brightness = Entry(self, width = 40, bg = '#e1e281')
 	    self.brightness.pack()
 
-	    self.instruction = Label(self, text = "Enter New Name (.png or .gif)", bg = '#8a8ac0')
+	    self.instruction = Label(self, text = "Enter New Name (.png or .gif)", bg = '#8a8ac0', font = ("arial", 11))
 	    self.instruction.pack()
-	    self.name = Entry(self, width = 30)
+	    self.name = Entry(self, width = 40, bg = '#e1e281')
 	    self.name.pack()
 
-	    self.instruction = Label(self, text = "Enter File Location", bg = '#8a8ac0')
+	    self.instruction = Label(self, text = "Enter File Location", bg = '#8a8ac0', font = ("arial", 11))
 	    self.instruction.pack()
-	    self.directory = Entry(self, width = 30)
+	    self.directory = Entry(self, width = 40, bg = '#e1e281')
 	    self.directory.pack()
+	    self.instruction = Label(self, text = "  ", bg = '#8a8ac0')
+	    self.instruction.pack()
+	    
 	
-	
-	#Create first button
-	    self.button1 = Button(self, text = "Generate", width =10, command = self.reveal, bg = '#383a39', fg = '#8a8ac0')
+	#Create generate button
+	    self.button1 = Button(self, text = "Generate", width =20, command = self.reveal, bg = '#383a39', fg = '#e1e281', font = ("arial", 11))
 	    self.button1.pack()
+	    
 
 	def reveal(self):
 		if self.version.get() == '':    #DEFAULT for blank VERSION input
@@ -106,7 +110,7 @@ class Application(Frame):
 def gui_main():
 	root = Tk()
 	root.title("Q-aRt Encoder")
-	root.geometry("325x475")
+	root.geometry("325x550")
 	root.configure(background = '#8a8ac0')
 	root.wm_iconbitmap('Icons/icon.ico')
 	app = Application(root)
