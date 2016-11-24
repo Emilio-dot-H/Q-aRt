@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 from tkinter import *
-from Input import run
+from tkinter import messagebox
+from Input import runGUI
+import ctypes
 import os
 
 class Application(Frame):
@@ -13,6 +15,7 @@ class Application(Frame):
 	    self.create_widgets()
 
 	def create_widgets(self):
+	   ## ctypes.windll.user32.MessageBoxW(0, "Your text", "Your title", 1)
 	    self.photo = PhotoImage(file = "Icons/logo.png")
 	    self.logo = Label(self, image = self.photo)
 	    self.logo.pack()
@@ -55,7 +58,7 @@ class Application(Frame):
 	    self.name = Entry(self, width = 40, bg = '#e1e281')
 	    self.name.pack()
 
-	    self.instruction = Label(self, text = "Enter File Location", bg = '#8a8ac0', font = ("arial", 11))
+	    self.instruction = Label(self, text = "Enter Save Location", bg = '#8a8ac0', font = ("arial", 11))
 	    self.instruction.pack()
 	    self.directory = Entry(self, width = 40, bg = '#e1e281')
 	    self.directory.pack()
@@ -69,13 +72,24 @@ class Application(Frame):
 	    
 
 	def reveal(self):
+		versionStr = self.version.get()
+		if self.words.get() == '':
+			messagebox.showerror(title='Error', message='Please enter a URL/Message')
+
 		if self.version.get() == '':    #DEFAULT for blank VERSION input
 			versionInt = 1
+		elif versionStr.isalpha() == True:
+                        messagebox.showerror(title='Invalid Version!', message='Enter a version number from 1 to 41')
+		elif int(self.version.get()) < 1 or int(self.version.get()) > 41:
+			messagebox.showerror(title='Invalid Version!', message='Enter a version number from 1 to 41')
+
 		else:
 			versionInt = int(self.version.get())
 
 		if self.level.get() == '':      #DEFAULT for blank LEVEL input
 			levelStr = 'L'
+		elif self.level.get() != 'L' or not 'M' or not 'Q' or not 'H' or not 'l' or not 'm' or not 'q' or not 'h':
+			messagebox.showerror(title='Invalid Level!', message='Enter one of the following options: L, M, Q, H.')
 		else:
 			levelStr = self.level.get()
 
@@ -92,7 +106,7 @@ class Application(Frame):
 		else:
 			brightness = float(self.brightness.get())
 		try:
-			ver, ecl, qr_name = run(
+			ver, ecl, qr_name = runGUI(
 				self.words.get(),
 				versionInt,
 				levelStr,
