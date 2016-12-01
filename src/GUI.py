@@ -15,7 +15,6 @@ class Application(Frame):
 	    self.create_widgets()
 
 	def create_widgets(self):
-	   ## ctypes.windll.user32.MessageBoxW(0, "Your text", "Your title", 1)
 	    self.photo = PhotoImage(file = "Icons/logo.png")
 	    self.logo = Label(self, image = self.photo)
 	    self.logo.pack()
@@ -69,8 +68,6 @@ class Application(Frame):
 	#Create generate button
 	    self.button1 = Button(self, text = "Generate", width =20, command = self.reveal, bg = '#383a39', fg = '#e1e281', font = ("arial", 11))
 	    self.button1.pack()
-	    
-
 	def reveal(self):
 		versionStr = self.version.get()
 		if self.words.get() == '':
@@ -79,7 +76,7 @@ class Application(Frame):
 		if self.version.get() == '':    #DEFAULT for blank VERSION input
 			versionInt = 1
 		elif versionStr.isalpha() == True:
-                        messagebox.showerror(title='Invalid Version!', message='Enter a version number from 1 to 41')
+			messagebox.showerror(title='Invalid Version!', message='Enter a version number from 1 to 41')
 		elif int(self.version.get()) < 1 or int(self.version.get()) > 41:
 			messagebox.showerror(title='Invalid Version!', message='Enter a version number from 1 to 41')
 
@@ -88,10 +85,10 @@ class Application(Frame):
 
 		if self.level.get() == '':      #DEFAULT for blank LEVEL input
 			levelStr = 'L'
-		elif self.level.get() != 'L' or not 'M' or not 'Q' or not 'H' or not 'l' or not 'm' or not 'q' or not 'h':
-			messagebox.showerror(title='Invalid Level!', message='Enter one of the following options: L, M, Q, H.')
-		else:
+		elif self.level.get() == 'L' or 'M' or 'Q' or 'H' or "l" or "m" or "q" or "h":
 			levelStr = self.level.get()
+		else:
+			messagebox.showerror(title='Invalid Level!', message='Enter one of the following options: L, M, Q, H.')
 
 		if self.directory.get() == '':  #DEFAULT for blank DIRECTORY input
 			directoryStatus = os.getcwd()
