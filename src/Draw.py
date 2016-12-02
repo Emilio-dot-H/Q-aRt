@@ -50,6 +50,7 @@ def draw_a_black_unit(p, x, y, ul):
             p.putpixel((x+i, y+j), 0)
 	
 ## @brief Method to combine QR code with another image
+#  @author sylnsfar
 #  @details Method accepts two parameters.
 #  @param absPath Accepts a string indicating the desired save directory
 #  @param qrPath Accepts a string indicating the location of the qr code

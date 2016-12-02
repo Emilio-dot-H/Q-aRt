@@ -65,13 +65,36 @@ def addFinders(qrmatrix):
 	for i in range(8):
 		for j in range(8):
 			if i in (0, 6):
-				qrmatrix[i][j] = qrmatrix[-i-1][j] = qrmatrix[i][-j-1] = 0 if j == 7 else 1
+				if (j == 7):
+					qrmatrix[i][j] = 0
+					qrmatrix[-i-1][j] = 0
+					qrmatrix[i][-j-1] = 0
+				else:
+					qrmatrix[i][j] = 1
+					qrmatrix[-i-1][j] = 1
+					qrmatrix[i][-j-1] = 1
 			elif i in (1, 5):
-				qrmatrix[i][j] = qrmatrix[-i-1][j] = qrmatrix[i][-j-1] = 1 if j in (0, 6) else 0  
+				if (j in (0,6)):
+					qrmatrix[i][j] = 1
+					qrmatrix[-i-1][j] = 1
+					qrmatrix[i][-j-1] = 1
+				else:
+					qrmatrix[i][j] = 0
+					qrmatrix[-i-1][j] = 0
+					qrmatrix[i][-j-1] = 0  
 			elif i == 7:
-				qrmatrix[i][j] = qrmatrix[-i-1][j] = qrmatrix[i][-j-1] = 0
+				qrmatrix[i][j] = 0
+				qrmatrix[-i-1][j] = 0
+				qrmatrix[i][-j-1] = 0
 			else:
-				qrmatrix[i][j] = qrmatrix[-i-1][j] = qrmatrix[i][-j-1] = 0 if j in (1, 5, 7) else 1
+				if (j in (1,5,7)):
+					qrmatrix[i][j] = 0
+					qrmatrix[-i-1][j] = 0
+					qrmatrix[i][-j-1] = 0
+				else:
+					qrmatrix[i][j] = 1
+					qrmatrix[-i-1][j] = 1
+					qrmatrix[i][-j-1] = 1
 
 ## @brief Method to add alignment patterns to the QR code matrix.
 #  @date 4/11/2016
@@ -97,7 +120,10 @@ def addAlignment(version, qrmatrix):
 def placeAlignmentPattern(qrmatrix, row, column):
 	for i in range(row-2, row+3):
 		for j in range(column-2, column+3):
-			qrmatrix[i][j] = 1 if i in (row-2, row+2) or j in (column-2, column+2) else 0
+			if(i in (row-2, row+2) or j in (column-2, column+2)):
+				qrmatrix[i][j] = 1
+			else:
+				qrmatrix[i][j] = 0
 	qrmatrix[row][column] = 1
 
 ## @brief Method to add timing patterns to the QR code matrix.
@@ -107,7 +133,12 @@ def placeAlignmentPattern(qrmatrix, row, column):
 #  @return Modifies the matrix, does not return a value.
 def addTiming(qrmatrix):
 	for i in range(8, len(qrmatrix)-8):
-		qrmatrix[i][6] = qrmatrix[6][i] = 1 if i % 2 ==0 else 0
+		if (i % 2 ==0):
+			qrmatrix[i][6] = 1
+			qrmatrix[6][i] = 1
+		else:
+			qrmatrix[i][6] = 0
+			qrmatrix[6][i] = 0
 
 ## @brief Method to add the dark bit and reserved bits to the QR code matrix.
 #  @date 4/11/2016
@@ -117,14 +148,20 @@ def addTiming(qrmatrix):
 #  @return Modifies the matrix, does not return a value.
 def addReserved(version, qrmatrix):
 	for j in range(8):
-		qrmatrix[8][j] = qrmatrix[8][-j-1] = qrmatrix[j][8] = qrmatrix[-j-1][8] = 0
+		qrmatrix[8][j] = 0
+		qrmatrix[8][-j-1] = 0
+		qrmatrix[j][8] = 0
+		qrmatrix[-j-1][8] = 0
 	qrmatrix[8][8] = 0
-	qrmatrix[8][6] = qrmatrix[6][8] = qrmatrix[-8][8] = 1
+	qrmatrix[8][6] = 1
+	qrmatrix[6][8] = 1
+	qrmatrix[-8][8] = 1
     
 	if version > 6:
 		for i in range(6):
 			for j in (-9, -10, -11):
-				qrmatrix[i][j] = qrmatrix[j][i] = 0
+				qrmatrix[i][j] = 0
+				qrmatrix[j][i] = 0
 
 ## @brief Method to add data bits to the QR code matrix.
 #  @date 4/11/2016
@@ -189,13 +226,17 @@ def getMaskPatterns(maskMatrix):
 	maskMatrix[-8][8] = None
 	for i in range(len(maskMatrix)):
 		for j in range(len(maskMatrix)):
-			maskMatrix[i][j] = 0 if maskMatrix[i][j] is not None else maskMatrix[i][j]
+			if (maskMatrix[i][j] is not None):
+				maskMatrix[i][j] = 0
 	maskPatterns = []
 	for i in range(8):
 		maskPattern = [ii[:] for ii in maskMatrix]
 		for row in range(len(maskPattern)):
 			for column in range(len(maskPattern)):
-				maskPattern[row][column] = 1 if maskPattern[row][column] is None and formula(i, row, column) else 0
+				if (maskPattern[row][column] is None and formula(i, row, column)):
+					maskPattern[row][column] = 1
+				else:
+					maskPattern[row][column] = 0
 		maskPatterns.append(maskPattern)
         
 	return maskPatterns
@@ -266,11 +307,16 @@ def evaluateMask(qrmatrix):
 def addFormatVersion(version, ecl, maskNum, qrmatrix):
 	formatString = [int(i) for i in format_info_str[lindex[ecl]][maskNum]]
 	for j in range(6):
-		qrmatrix[8][j] = qrmatrix[-j-1][8] = formatString[j]
-		qrmatrix[8][-j-1] = qrmatrix[j][8] = formatString[-j-1]
-	qrmatrix[8][7] = qrmatrix[-7][8] = formatString[6]
-	qrmatrix[8][8] = qrmatrix[8][-8] = formatString[7]
-	qrmatrix[7][8] = qrmatrix[8][-7] = formatString[8]
+		qrmatrix[8][j] = formatString[j]
+		qrmatrix[-j-1][8] = formatString[j]
+		qrmatrix[8][-j-1] = formatString[-j-1]
+		qrmatrix[j][8] = formatString[-j-1]
+	qrmatrix[8][7] = formatString[6]
+	qrmatrix[-7][8] = formatString[6]
+	qrmatrix[8][8] = formatString[7]
+	qrmatrix[8][-8] = formatString[7]
+	qrmatrix[7][8] = formatString[8]
+	qrmatrix[8][-7] = formatString[8]
     
 	if version > 6:
 		versionString = (int(i) for i in version_info_str[version-7])

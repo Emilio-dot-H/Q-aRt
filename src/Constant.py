@@ -1,5 +1,5 @@
 # Constants for QR Generation
-# Author: Elton Kjeld Schiott
+# Author: sylnsfar
 # This class contains useful constants for qr processing.
 ## @mainpage Mainpage
 #
@@ -8,7 +8,9 @@
 # @title Constant
 # @date 13/11/2016
 # @brief This class contains useful constants for qr processing.
-# @details State variables:\n
+# @details
+# Module is taken from original project. Contains useful constants for QR code computation.\n 
+# State variables:\n
 # characterCapacity - list of character capacities for each version and error correction level\n
 # requriedBytes - list of required bytes for each version\n
 # numList - list of valid characters for numeric mode\n
