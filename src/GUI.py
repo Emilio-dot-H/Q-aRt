@@ -23,7 +23,7 @@ class Application(Frame):
 	    self.words = Entry(self, width = 40, bg = '#e1e281')
 	    self.words.pack()
 
-	    self.instruction = Label(self, text = "Enter Version (1-41)", bg = '#8a8ac0', font = ("arial", 11))
+	    self.instruction = Label(self, text = "Enter Version (1-40)", bg = '#8a8ac0', font = ("arial", 11))
 	    self.instruction.pack()
 	    self.version = Entry(self, width = 40, bg = '#e1e281')
 	    self.version.pack()
@@ -76,9 +76,9 @@ class Application(Frame):
 		if self.version.get() == '':    #DEFAULT for blank VERSION input
 			versionInt = 1
 		elif versionStr.isalpha() == True:
-			messagebox.showerror(title='Invalid Version!', message='Enter a version number from 1 to 41')
+			messagebox.showerror(title='Invalid Version!', message='Enter a version number from 1 to 40')
 		elif int(self.version.get()) < 1 or int(self.version.get()) > 41:
-			messagebox.showerror(title='Invalid Version!', message='Enter a version number from 1 to 41')
+			messagebox.showerror(title='Invalid Version!', message='Enter a version number from 1 to 40')
 
 		else:
 			versionInt = int(self.version.get())

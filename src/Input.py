@@ -138,8 +138,8 @@ def runGUI(inputString, version = 1, ecl = 'H', picture = None, colorized = Fals
 			raise ValueError(messagebox.showerror(title='Invalid image!', message='Make sure the image exists and that it has one of the following formats: .jpg, .png, .bmp, .gif .'))
 		if picture[-4:] == '.gif' and saveName and saveName[-4:] != '.gif':
 			raise ValueError(messagebox.showerror(title='Invalid file type!', message='If the input image is a .gif, the output image must be as well.'))
-		if not isinstance(colorized, bool):
-			raise ValueError(messagebox.showerror(title='Invalid colorized!', message='Please enter a boolean value: True, False.'))
+	##	if not isinstance(colorized, bool):
+	##		raise ValueError(messagebox.showerror(title='Invalid colorized!', message='Please enter a boolean value: True, False.'))
 		if not isinstance(contrast, float):
 			raise ValueError(messagebox.showerror(title='Invalid contrast!', message='Please enter a decimal value (1.0 to 5.9)'))
 		if not isinstance(brightness, float):
