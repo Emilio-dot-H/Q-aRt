@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Gantt_Q-aRt" company="Q-aRt Code" webLink="http://" view-date="2016-10-12" view-index="0" gantt-divider-location="448" resource-divider-location="300" version="2.8.1" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Gantt_Q-aRt" company="Q-aRt Code" webLink="http://" view-date="2016-11-13" view-index="0" gantt-divider-location="448" resource-divider-location="300" version="2.8.1" locale="en_US">
     <description><![CDATA[This is a gantt chart]]></description>
-    <view zooming-state="default:3" id="gantt-chart">
+    <view zooming-state="default:4" id="gantt-chart">
         <field id="tpd3" name="Name" width="218" order="0"/>
         <field id="tpd4" name="Begin date" width="106" order="1"/>
         <field id="tpd5" name="End date" width="105" order="2"/>
-        <option id="color.recent"><![CDATA[#669900 #cc0000 #6600cc #00ffff #000066 #ffff00 #ffff33 #ffff99 #00cc00 #339900]]></option>
+        <option id="color.recent"><![CDATA[#ffcc00 #669900 #cc0000 #6600cc #00ffff #000066 #ffff00 #ffff33 #ffff99 #00cc00]]></option>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="210" order="0"/>
@@ -81,6 +81,7 @@
         <task id="63" name="MILESTONE V" color="#cc0000" meeting="true" start="2016-11-21" duration="0" complete="0" expand="true">
             <task id="67" name="Milestone IV" color="#ffff33" meeting="false" start="2016-11-21" duration="13" complete="0" expand="true">
                 <task id="70" name="Finalize Coding" color="#ffff00" meeting="false" start="2016-11-21" duration="3" complete="0" expand="true"/>
+                <task id="149" name="Make GUI" color="#ffcc00" meeting="false" start="2016-11-21" duration="6" complete="0" expand="true"/>
                 <task id="71" name="Prep for Demonstration" color="#ffff00" meeting="false" start="2016-11-24" duration="3" complete="0" expand="true"/>
                 <task id="72" name="Finalize Documentation" color="#ffff00" meeting="false" start="2016-11-28" duration="8" complete="0" expand="true"/>
             </task>
@@ -107,6 +108,7 @@
         <allocation task-id="142" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="10.0"/>
         <allocation task-id="143" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="146" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="25.0"/>
+        <allocation task-id="149" resource-id="0" function="SoftwareDevelopment:2" responsible="true" load="40.0"/>
         <allocation task-id="8" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="15.0"/>
         <allocation task-id="20" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="20.0"/>
         <allocation task-id="33" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="10.0"/>
