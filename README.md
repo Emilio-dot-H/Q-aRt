@@ -18,3 +18,7 @@ Usage:
 Via command prompt:
 
 python Main.py -gui
+
+Enter any message to encode in the first dialog box, all other parameters are optional to include.
+
+For help type: python Main.py -help
