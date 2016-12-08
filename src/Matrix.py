@@ -1,13 +1,13 @@
-# QR Matrix Module
+# QR Code Module
 # Author: Elton Kjeld Schiott
 # This class places the data in a matrix.
 ## @mainpage Mainpage
 #
 ##
 # @file Matrix.py
-# @title Matrix
+# @title QR Code Module
 # @date 4/11/2016
-# @brief This class places the data in a matrix.
+# @brief This class places the data into a QR code.
 # @details This class creates a matrix, places structures required according to
 # QR code standards, evaluates the best mask pattern and applies it to the data.\n
 # State variables:\n
