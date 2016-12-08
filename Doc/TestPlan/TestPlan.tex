@@ -39,6 +39,8 @@ No figures at this time.
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 03/11/16 & 1.0 & System and Proof of Concept tests present.\\
+
+03/11/16 & 2.0 & Revisited on project completion (rev1).\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -120,8 +122,7 @@ No Outstanding Terms & N/A\\
 	\end{itemize}
 \subsection{Automated Testing Approach}
 	All automated testing will be done on the modular level. 
-    % this sentence doesn't make sense:
-    Since the system is restricted from input through to external scanner, display colour tool or manual interpretation by a person will be used for system testing.
+    Since the system is closed from Run to output generation, manual interpretation by a person will be used for system testing.
 
 \subsection{Testing Tools}
 	Unit testing will be conducted using the Python unittest unit testing framework.
@@ -182,7 +183,7 @@ How test will be performed: With a QR Scanning Application.
 
 Type: Functional, Dynamic.
 					
-Initial State: Output on hand.
+Initial State: Run.
 					
 Input: Display/View of QR Code png, \#808080 grey square image.
 					
@@ -244,9 +245,9 @@ How test will be performed: An on-screen hex eyedrop tool will be used to compar
 
 Type: Non-Functional, Dynamic, Manual.
 					
-Initial State: Output on hand.
+Initial State: Run.
 					
-Input: Display/View of QR Code png, square image of some text.
+Input: Display/View of QR Code png, square image of some text, version number asserted 20 (median version).
 					
 Output: QR code with "artistic" text appearance.
 					
@@ -256,7 +257,7 @@ How test will be performed: Member visually inspects output PNG with text chosen
 
 \subsubsection{Performance}
 
-item{Reasonable speed\\}  %% typo
+item{Reasonable speed\\}
 
 Type: Non-Functional, Dynamic, Manual.
 					
@@ -266,7 +267,7 @@ Input: Short URL, \#808080 grey square image.
 					
 Output: QR code image with "artistic" text integrated.
 					
-How test will be performed: "create" button pressed, android stopwatch manually started. PNG output, stopwatch manually stopped.
+How test will be performed: "create" button pressed, user will wait for output and rate runtime "too long" or "not too long".
 
 \end{enumerate}
 
@@ -280,7 +281,7 @@ How test will be performed: "create" button pressed, android stopwatch manually 
 
 Type: Functional, Dynamic
 					
-Initial State: Python Shell.
+Initial State: Run.
 					
 Input: Max char (13 for the Proof of Concept specifically) input string as shell argument.
 					
@@ -292,7 +293,7 @@ How test will be performed: Max char string will be input on shell prompt, and t
 
 Type: Functional, Dynamic
 					
-Initial State: Python Shell.
+Initial State: Run.
 					
 Input: Empty string input string as shell argument.
 					
@@ -322,6 +323,6 @@ No additional information to show.
 
 \subsection{Symbolic Parameters}
 
-None yet used.
+None used.
 
 \end{document}
