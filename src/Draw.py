@@ -44,6 +44,14 @@ def drawQRCode(absPath, qrmatrix):
 	pic.save(saving)
 	return saving
 
+## @brief Method to draw a black module onto the QR code
+#  @author sylnsfar
+#  @details Method accepts four parameters.
+#  @param p Accepts an Image object indicating the new picture being created
+#  @param x Accepts an integer indicating the x-value of the pixel co-ordinate to be drawn
+#  @param y Accepts an integer indicating the y-value of the pixel co-ordinate to be drawn
+#  @param ul Accepts an integer indicating the size of one unit on the QR code
+#  @return Saves a PNG file to the absPath directory
 def draw_a_black_unit(p, x, y, ul):
     for i in range(ul):
         for j in range(ul):
@@ -51,11 +59,17 @@ def draw_a_black_unit(p, x, y, ul):
 	
 ## @brief Method to combine QR code with another image
 #  @author sylnsfar
-#  @details Method accepts two parameters.
-#  @param absPath Accepts a string indicating the desired save directory
-#  @param qrPath Accepts a string indicating the location of the qr code
-#  @param imagePath Accepts a string indicating the location of the image
-#  @return Saves a PNG file to the absPath directory
+#  @details Method accepts eight parameters.
+#  @param ver Integer between 1 and 40 that specifies the desired size of the QR code.
+#  @param qr_name Accepts a string indicating the name of the saved QR code image
+#  @param bg_name Accepts a string indicating the name of the saved background image to be combined
+#  @param colorized Accepts a boolean indicating whether the result should be in black and white(False)
+#  or in colour (True)
+#  @param contrast Accepts a double representing the relative contrast of the output image. A value of 1.0 makes no change.
+#  @param brightness Accepts a double representing the relative brightness of the output image. A value of 1.0 makes no change.
+#  @param save_dir Accepts a string indicating the name of the directory to saved the cominbed image in.
+#  @param save_name Accepts a string indicating the save name of the output comined image.
+#  @return Saves a PNG, JPG, or GIF file to the save_dir directory
 def combine(ver, qr_name, bg_name, colorized, contrast, brightness, save_dir, save_name=None):
 		from Constant import alig_location
 		from PIL import ImageEnhance, ImageFilter

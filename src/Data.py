@@ -133,6 +133,12 @@ def numericEncoding(inputString):
 		data += ('0'*(requiredLength - len(temp)) + temp)
 	return data
 
+## @brief Method to encode the Input String in alphanumeric mode
+#  @details The input string entered is assumed to be of 'alphanumeric' mode. Each
+#  char in the input string is encoded.
+#  @param inputString Accepts an input string to be encoded into data bits for a
+#  QR code.
+#  @return string representing encoded input string
 def alphanumericEncoding(inputString):
 	strList = [alphanum_list.index(i) for i in str]
 	data = ''
@@ -161,6 +167,15 @@ def byteEncoding(inputString):
 		data += temp
 	return data
 
+## @brief Method to get the character count of the QR code
+#  @details Gets the character count string given a version, mode, and input string
+#  @param inputString Accepts an input string to be encoded into data bits for a
+#  QR code.
+#  @param version Integer between 1 and 40 that specifies the desired size of the QR code.
+#  @param mode Accepts one of four values: NUMERIC, ALPHANUMERIC, BYTE, 
+#  KANJI that specify the acceptable characters and encoding mode for
+#  the QR code.
+#  @return character count string
 def getCharacterCount(version, mode, inputString):
 	if 1 <= version <= 9:
 		charCount = (10, 9, 8, 8)[mindex[mode]]

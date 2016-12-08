@@ -21,7 +21,7 @@ import Data, Draw, ECC, Matrix, Structure #, GUI
 import os
 from PIL import Image
 from tkinter import messagebox
-## @brief Method to create QR code
+## @brief Method to create QR code using command prompt
 #  @date 4/11/2016
 #  @details Method accepts nine parameters. 
 #  @param version Integer between 1 and 40 that specifies the size of the QR code.
@@ -77,14 +77,14 @@ def run(inputString, version = 1, ecl = 'H', picture = None, colorized = False, 
     # Draw QR code
 	qr_name = Draw.drawQRCode(saveDirectory, qrmatrix)
 	
-	
+	#creates temporary directory for combine operation
 	tempdir = os.path.join(os.path.expanduser('~'), '.myqr')
     
 	try:
 		if not os.path.exists(tempdir):
 			os.makedirs(tempdir)
 
-
+		# method for combining animated gif image
 		if picture and picture[-4:]=='.gif':
 			import imageio
              
@@ -106,6 +106,7 @@ def run(inputString, version = 1, ecl = 'H', picture = None, colorized = False, 
 			ims = [imageio.imread(pic) for pic in imsname]
 			qr_name = os.path.join(saveDirectory, os.path.splitext(os.path.basename(picture))[0] + '_qrcode.gif') if not saveName else os.path.join(saveDirectory, saveName)
 			imageio.mimsave(qr_name, ims)
+		# methods for regular image combining
 		elif picture:
 			qr_name = Draw.combine(version, qr_name, picture, colorized, contrast, brightness, saveDirectory, saveName)
 		elif qr_name:
@@ -122,6 +123,19 @@ def run(inputString, version = 1, ecl = 'H', picture = None, colorized = False, 
 		if os.path.exists(tempdir):
 			shutil.rmtree(tempdir)
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## @brief Method to create QR code using GUI
+#  @date 7/12/2016
+#  @details Method accepts nine parameters. 
+#  @param version Integer between 1 and 40 that specifies the size of the QR code.
+#  @param ecl Accepts one of four values: 'L', 'M', 'Q', 'H' that specify the
+#  level of error correction to be encoded.
+#  @param picture Accepts the file location of an image to combine
+#  @param colorized Accepts a boolean indicating whether or not the output will be in colour
+#  @param contrast Accepts an integer indicating the cotrast level
+#  @param brightness Accepts an integer indicating the brightness level
+#  @param saveName Accepts a string containing the desired save name for the finished qr code
+#  @param saveDirectory Accpets a string contating the desired save location for the finished qr code
+#  @return Final binary string representing the data.
 def runGUI(inputString, version = 1, ecl = 'H', picture = None, colorized = False, contrast = 1.0, brightness = 1.0, saveName = None, saveDirectory = os.getcwd()):
 	supported_chars = r"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz Â·Â·,.:;+-*/\~!@#$%^&`'=<>[]()?_{}|"
      
@@ -164,14 +178,14 @@ def runGUI(inputString, version = 1, ecl = 'H', picture = None, colorized = Fals
     # Draw QR code
 	qr_name = Draw.drawQRCode(saveDirectory, qrmatrix)
 	
-	
+	#creates temporary directory for combine operation
 	tempdir = os.path.join(os.path.expanduser('~'), '.myqr')
     
 	try:
 		if not os.path.exists(tempdir):
 			os.makedirs(tempdir)
 
-
+		# method for combining animated gif image
 		if picture and picture[-4:]=='.gif':
 			import imageio
              
@@ -193,6 +207,7 @@ def runGUI(inputString, version = 1, ecl = 'H', picture = None, colorized = Fals
 			ims = [imageio.imread(pic) for pic in imsname]
 			qr_name = os.path.join(saveDirectory, os.path.splitext(os.path.basename(picture))[0] + '_qrcode.gif') if not saveName else os.path.join(saveDirectory, saveName)
 			imageio.mimsave(qr_name, ims)
+		# methods for regular image combining
 		elif picture:
 			qr_name = Draw.combine(version, qr_name, picture, colorized, contrast, brightness, saveDirectory, saveName)
 		elif qr_name:

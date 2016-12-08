@@ -1,15 +1,29 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+# Command Line Argument Handling Module
+# Author: Elton Kjeld Schiott, sylnsfar
+# This class handles command line arguments to run the program.
+## @mainpage Mainpage
+#
+##
+# @file Terminal.py
+# @title Terminal
+# @date 4/11/2016
+# @brief This class handles command line arguments to run the program.
+# @details This class makes it possible to run the program through command line.\n
+# State variables: none\n
 from Input import run
 from GUI import gui_main
 import os
 
+## @brief Method to obtain arguments via command line
+#  @date 7/12/2016
+#  @details Allows a user to interface with the program through command line.
 def main():
     import argparse
 
     argparser = argparse.ArgumentParser()
-    
+    # adds possible arguments
     argparser.add_argument('-gui', '--interface', action = 'store_true', help = 'Display the Graphical User Interface')
     argparser.add_argument('-w', '--Words', help = 'The words to produce you QR-code picture, like a URL or a sentence. Please read the README file for the supported characters.')
     argparser.add_argument('-v', '--version', type = int, choices = range(1,41), default = 1, help = 'The version means the length of a side of the QR-Code picture. From little size to large is 1 to 40.')
@@ -22,14 +36,16 @@ def main():
     argparser.add_argument('-d', '--directory', default = os.getcwd(), help = 'The directory of output.')
 
     args = argparser.parse_args()
-    
+    # run GUI
     if args.interface:
         gui_main()
+	# gifs may take some time to process
     if args.picture and args.picture[-4:]=='.gif':
 
         print('It may take a while, please wait for minutes...')
 
         print('This may take a while, please be patient...')
+	# run QR code encoder and combiner
     try:
         ver, ecl, qr_name = run(
             args.Words,

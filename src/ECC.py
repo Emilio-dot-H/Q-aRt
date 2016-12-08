@@ -1,5 +1,5 @@
 # Error Correction Codeword Module
-# Author: Elton Kjeld Schiott
+# Author: Elton Kjeld Schiott, sylnsfar
 # This class generates error correction codewords for a given version, error correction
 # level and data string.
 ## @mainpage Mainpage
@@ -36,6 +36,12 @@ def getCodewords(version, ecl, data):
 		errorCorrectionCodewords.append(codeword(dataCodeword, wordsPerBlock))
 	return errorCorrectionCodewords
 
+## @brief Method to calculate an error correction codeword
+#  @date 7/12/2016
+#  @details Method accepts two parameters.
+#  @param dataCodeword Accepts a string representing one data codeword
+#  @param wordsPerBlock Accepts an integer indicating the number of codewords in each block
+#  @return Returns the remainder of this iteration of division.
 def codeword(dataCodeword, wordsPerBlock):
 	generatorPolynomial = GP_list[wordsPerBlock]
 	remainder = dataCodeword
@@ -44,7 +50,7 @@ def codeword(dataCodeword, wordsPerBlock):
 	return remainder
 
 ## @brief Method to divide the message polynomial by the generator polynomial
-#  @date 2/11/2016
+#  @author sylnsfar
 #  @details Method accepts two parameters.
 #  @param MP Accepts an array of coefficients representing the message polynomial.
 #  @param GP Accepts an array of coefficients representing the generator polynomial.
@@ -63,6 +69,7 @@ def divide(MP, *GP):
 
 ## @brief Method to obtain the result of the exclusive or operation on the
 #  generator and message polynomials.
+#  @author sylnsfar
 #  @details Method accepts two parameters.
 #  @param MP Accepts an array of coefficients representing the message polynomial.
 #  @param GP Accepts an array of coefficients representing the generator polynomial.

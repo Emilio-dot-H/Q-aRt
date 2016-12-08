@@ -11,20 +11,20 @@
 # @details
 # Module is taken from original project. Contains useful constants for QR code computation.\n 
 # State variables:\n
-# characterCapacity - list of character capacities for each version and error correction level\n
-# requriedBytes - list of required bytes for each version\n
-# numList - list of valid characters for numeric mode\n
-# alphanumList - list of valid characters for alphanumeric mode\n
-# groupingList - list of codeword grouping into blocks for each version\n
-# modeIndicator - list of encoding mode strings\n
-# GPList - lsit of generator polynomials\n
-# codewordsPerBlock - list of error correction codewords per block for each version and error correction level\n
-# powersOf2 - list of powers of two in Galois Field\n
+# char_cap - list of character capacities for each version and error correction level\n
+# required_bytes - list of required bytes for each version\n
+# num_list - list of valid characters for numeric mode\n
+# alphanum_list - list of valid characters for alphanumeric mode\n
+# grouping_list - list of codeword grouping into blocks for each version\n
+# mode_indicator - list of encoding mode strings\n
+# GP_list - lsit of generator polynomials\n
+# ecc_num_per_block - list of error correction codewords per block for each version and error correction level\n
+# po2 - list of powers of two in Galois Field\n
 # log - list of logarithms in Galois Field\n
-# remainderBits - list of required remainder bits for each version for interleaving\n
-# alignmentLocations - list of alignment pattern locations for each version\n
-# formatString - list of format strings for each mask pattern\n
-# versionString - list of version strings for each version\n
+# required_remainder_bits - list of required remainder bits for each version for interleaving\n
+# alig_location - list of alignment pattern locations for each version\n
+# format_info_string - list of format strings for each mask pattern\n
+# version_info_string - list of version strings for each version\n
 
 # -*- coding: utf-8 -*-
 """

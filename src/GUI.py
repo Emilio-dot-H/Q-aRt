@@ -1,19 +1,37 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# Error Correction Codeword Module
+# Author: Emilio Hajj
+# This class initializes the GUI
+## @mainpage Mainpage
+#
+##
+# @file GUI.py
+# @title GUI
+# @date 7/12/2016
+# @brief This class initializes the GUI
+# @details This class creates the graphical user interface for the program
+# @code
+#   codewords = ECC.getCodewords(1, 'Q', data)
+# @endcode
 from tkinter import *
 from tkinter import messagebox
 from Input import runGUI
 import ctypes
 import os
 
+#Graphical User Interface Application
 class Application(Frame):
 	""" A Gui App """
+	## @brief constructor for GUI
 	def __init__(self, master):
 	    Frame.__init__(self, master)
 	    self.grid()
 	    self.configure(background = '#8a8ac0')
 	    self.create_widgets()
-
+	## @brief Method to create all GUI widgets
+	#  @details Creates the predefined widgets necessary for program operation.
+	#  @return None
 	def create_widgets(self):
 	    self.photo = PhotoImage(file = "Icons/logo.png")
 	    self.logo = Label(self, image = self.photo)
@@ -117,6 +135,8 @@ class Application(Frame):
 			print('Succeed! \nCheck out your', str(ver) + '-' + str(ecl), 'QR-code:', qr_name)
 		except:
 			raise
+			
+##@brief Creates the GUI window
 def gui_main():
 	root = Tk()
 	root.title("Q-aRt Encoder")
