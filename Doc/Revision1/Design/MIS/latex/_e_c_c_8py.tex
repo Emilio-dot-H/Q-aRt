@@ -1,0 +1,131 @@
+\hypertarget{_e_c_c_8py}{}\section{E\+C\+C.\+py File Reference}
+\label{_e_c_c_8py}\index{E\+C\+C.\+py@{E\+C\+C.\+py}}
+
+
+E\+CC  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{_e_c_c_8py_a936ccf4592e4c7423b65b2981834702c}{E\+C\+C.\+get\+Codewords} (version, ecl, data)
+\begin{DoxyCompactList}\small\item\em Method to obtain error correction codewords. \end{DoxyCompactList}\item 
+def \hyperlink{_e_c_c_8py_af51c3d029f0e663e6f8ca7c91ecf84fc}{E\+C\+C.\+codeword} (data\+Codeword, words\+Per\+Block)
+\begin{DoxyCompactList}\small\item\em Method to calculate an error correction codeword. \end{DoxyCompactList}\item 
+def \hyperlink{_e_c_c_8py_acec933a8b907fd99decede8f61a1cccf}{E\+C\+C.\+divide} (MP, GP)
+\begin{DoxyCompactList}\small\item\em Method to divide the message polynomial by the generator polynomial. \end{DoxyCompactList}\item 
+def \hyperlink{_e_c_c_8py_a2cb097735abed2fc1c5642eaa379bb72}{E\+C\+C.\+X\+OR} (GP, MP)
+\begin{DoxyCompactList}\small\item\em Method to obtain the result of the exclusive or operation on the generator and message polynomials. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+E\+CC 
+
+\begin{DoxyDate}{Date}
+2/11/2016 This class generates error correction codewords.
+\end{DoxyDate}
+This class generates error correction codewords for a given version, error correction level and data string.~\newline
+ State variables\+:~\newline
+ int list MP -\/ coefficients representing the message polynomial at each iteration.~\newline
+ int list GP -\/ coefficients representing the generator polynomial at each iteration.~\newline
+
+\begin{DoxyCode}
+codewords = \hyperlink{_e_c_c_8py_a936ccf4592e4c7423b65b2981834702c}{ECC.getCodewords}(1, \textcolor{stringliteral}{'Q'}, data)
+\end{DoxyCode}
+ 
+
+\subsection{Function Documentation}
+\hypertarget{_e_c_c_8py_file_af51c3d029f0e663e6f8ca7c91ecf84fc}{}\label{_e_c_c_8py_file_af51c3d029f0e663e6f8ca7c91ecf84fc} 
+\index{E\+C\+C.\+py@{E\+C\+C.\+py}!codeword@{codeword}}
+\index{codeword@{codeword}!E\+C\+C.\+py@{E\+C\+C.\+py}}
+\subsubsection{\texorpdfstring{codeword()}{codeword()}}
+{\footnotesize\ttfamily def E\+C\+C.\+codeword (\begin{DoxyParamCaption}\item[{}]{data\+Codeword,  }\item[{}]{words\+Per\+Block }\end{DoxyParamCaption})}
+
+
+
+Method to calculate an error correction codeword. 
+
+\begin{DoxyDate}{Date}
+7/12/2016
+\end{DoxyDate}
+Method accepts two parameters. 
+\begin{DoxyParams}{Parameters}
+{\em data\+Codeword} & Accepts a string representing one data codeword \\
+\hline
+{\em words\+Per\+Block} & Accepts an integer indicating the number of codewords in each block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the remainder of this iteration of division. 
+\end{DoxyReturn}
+\hypertarget{_e_c_c_8py_file_acec933a8b907fd99decede8f61a1cccf}{}\label{_e_c_c_8py_file_acec933a8b907fd99decede8f61a1cccf} 
+\index{E\+C\+C.\+py@{E\+C\+C.\+py}!divide@{divide}}
+\index{divide@{divide}!E\+C\+C.\+py@{E\+C\+C.\+py}}
+\subsubsection{\texorpdfstring{divide()}{divide()}}
+{\footnotesize\ttfamily def E\+C\+C.\+divide (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{GP }\end{DoxyParamCaption})}
+
+
+
+Method to divide the message polynomial by the generator polynomial. 
+
+\begin{DoxyAuthor}{Author}
+sylnsfar
+\end{DoxyAuthor}
+Method accepts two parameters. 
+\begin{DoxyParams}{Parameters}
+{\em MP} & Accepts an array of coefficients representing the message polynomial. \\
+\hline
+{\em GP} & Accepts an array of coefficients representing the generator polynomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the remainder of this iteration of division. 
+\end{DoxyReturn}
+\hypertarget{_e_c_c_8py_file_a936ccf4592e4c7423b65b2981834702c}{}\label{_e_c_c_8py_file_a936ccf4592e4c7423b65b2981834702c} 
+\index{E\+C\+C.\+py@{E\+C\+C.\+py}!get\+Codewords@{get\+Codewords}}
+\index{get\+Codewords@{get\+Codewords}!E\+C\+C.\+py@{E\+C\+C.\+py}}
+\subsubsection{\texorpdfstring{get\+Codewords()}{getCodewords()}}
+{\footnotesize\ttfamily def E\+C\+C.\+get\+Codewords (\begin{DoxyParamCaption}\item[{}]{version,  }\item[{}]{ecl,  }\item[{}]{data }\end{DoxyParamCaption})}
+
+
+
+Method to obtain error correction codewords. 
+
+\begin{DoxyDate}{Date}
+2/11/2016
+\end{DoxyDate}
+Method accepts three parameters 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em ecl} & Accepts one of four values\+: \textquotesingle{}L\textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}Q\textquotesingle{}, \textquotesingle{}H\textquotesingle{} that specify the level of error correction to be encoded. \\
+\hline
+{\em data} & Accepts binary string to generate codewords for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a list of codewords to be used for error correction. 
+\end{DoxyReturn}
+\hypertarget{_e_c_c_8py_file_a2cb097735abed2fc1c5642eaa379bb72}{}\label{_e_c_c_8py_file_a2cb097735abed2fc1c5642eaa379bb72} 
+\index{E\+C\+C.\+py@{E\+C\+C.\+py}!X\+OR@{X\+OR}}
+\index{X\+OR@{X\+OR}!E\+C\+C.\+py@{E\+C\+C.\+py}}
+\subsubsection{\texorpdfstring{X\+O\+R()}{XOR()}}
+{\footnotesize\ttfamily def E\+C\+C.\+X\+OR (\begin{DoxyParamCaption}\item[{}]{GP,  }\item[{}]{MP }\end{DoxyParamCaption})}
+
+
+
+Method to obtain the result of the exclusive or operation on the generator and message polynomials. 
+
+\begin{DoxyAuthor}{Author}
+sylnsfar
+\end{DoxyAuthor}
+Method accepts two parameters. 
+\begin{DoxyParams}{Parameters}
+{\em MP} & Accepts an array of coefficients representing the message polynomial. \\
+\hline
+{\em GP} & Accepts an array of coefficients representing the generator polynomial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the result of the exclusive or operation as an array. 
+\end{DoxyReturn}

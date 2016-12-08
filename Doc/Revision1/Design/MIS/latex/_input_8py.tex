@@ -1,0 +1,95 @@
+\hypertarget{_input_8py}{}\section{Input.\+py File Reference}
+\label{_input_8py}\index{Input.\+py@{Input.\+py}}
+
+
+Input  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{_input_8py_a73038db477e7183e552ff257e1c4ffea}{Input.\+run} (input\+String, version=1, ecl=\textquotesingle{}H\textquotesingle{}, picture=None, colorized=False, contrast=1.\+0, brightness=1.\+0, save\+Name=None, save\+Directory=os.\+getcwd())
+\begin{DoxyCompactList}\small\item\em Method to create QR code using command prompt. \end{DoxyCompactList}\item 
+def \hyperlink{_input_8py_a8bcebad534d51b55509815f46f514fb2}{Input.\+run\+G\+UI} (input\+String, version=1, ecl=\textquotesingle{}H\textquotesingle{}, picture=None, colorized=False, contrast=1.\+0, brightness=1.\+0, save\+Name=None, save\+Directory=os.\+getcwd())
+\begin{DoxyCompactList}\small\item\em Method to create QR code using G\+UI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Input 
+
+\begin{DoxyDate}{Date}
+2/11/2016 This class takes input to generate a QR code
+\end{DoxyDate}
+State variables\+: none 
+
+\subsection{Function Documentation}
+\hypertarget{_input_8py_file_a73038db477e7183e552ff257e1c4ffea}{}\label{_input_8py_file_a73038db477e7183e552ff257e1c4ffea} 
+\index{Input.\+py@{Input.\+py}!run@{run}}
+\index{run@{run}!Input.\+py@{Input.\+py}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily def Input.\+run (\begin{DoxyParamCaption}\item[{}]{input\+String,  }\item[{}]{version = {\ttfamily 1},  }\item[{}]{ecl = {\ttfamily \textquotesingle{}H\textquotesingle{}},  }\item[{}]{picture = {\ttfamily None},  }\item[{}]{colorized = {\ttfamily False},  }\item[{}]{contrast = {\ttfamily 1.0},  }\item[{}]{brightness = {\ttfamily 1.0},  }\item[{}]{save\+Name = {\ttfamily None},  }\item[{}]{save\+Directory = {\ttfamily os.getcwd()} }\end{DoxyParamCaption})}
+
+
+
+Method to create QR code using command prompt. 
+
+\begin{DoxyDate}{Date}
+4/11/2016
+\end{DoxyDate}
+Method accepts nine parameters. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em ecl} & Accepts one of four values\+: \textquotesingle{}L\textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}Q\textquotesingle{}, \textquotesingle{}H\textquotesingle{} that specify the level of error correction to be encoded. \\
+\hline
+{\em picture} & Accepts the file location of an image to combine \\
+\hline
+{\em colorized} & Accepts a boolean indicating whether or not the output will be in colour \\
+\hline
+{\em contrast} & Accepts an integer indicating the cotrast level \\
+\hline
+{\em brightness} & Accepts an integer indicating the brightness level \\
+\hline
+{\em save\+Name} & Accepts a string containing the desired save name for the finished qr code \\
+\hline
+{\em save\+Directory} & Accpets a string contating the desired save location for the finished qr code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Final binary string representing the data. 
+\end{DoxyReturn}
+\hypertarget{_input_8py_file_a8bcebad534d51b55509815f46f514fb2}{}\label{_input_8py_file_a8bcebad534d51b55509815f46f514fb2} 
+\index{Input.\+py@{Input.\+py}!run\+G\+UI@{run\+G\+UI}}
+\index{run\+G\+UI@{run\+G\+UI}!Input.\+py@{Input.\+py}}
+\subsubsection{\texorpdfstring{run\+G\+U\+I()}{runGUI()}}
+{\footnotesize\ttfamily def Input.\+run\+G\+UI (\begin{DoxyParamCaption}\item[{}]{input\+String,  }\item[{}]{version = {\ttfamily 1},  }\item[{}]{ecl = {\ttfamily \textquotesingle{}H\textquotesingle{}},  }\item[{}]{picture = {\ttfamily None},  }\item[{}]{colorized = {\ttfamily False},  }\item[{}]{contrast = {\ttfamily 1.0},  }\item[{}]{brightness = {\ttfamily 1.0},  }\item[{}]{save\+Name = {\ttfamily None},  }\item[{}]{save\+Directory = {\ttfamily os.getcwd()} }\end{DoxyParamCaption})}
+
+
+
+Method to create QR code using G\+UI. 
+
+\begin{DoxyDate}{Date}
+7/12/2016
+\end{DoxyDate}
+Method accepts nine parameters. 
+\begin{DoxyParams}{Parameters}
+{\em version} & Integer between 1 and 40 that specifies the size of the QR code. \\
+\hline
+{\em ecl} & Accepts one of four values\+: \textquotesingle{}L\textquotesingle{}, \textquotesingle{}M\textquotesingle{}, \textquotesingle{}Q\textquotesingle{}, \textquotesingle{}H\textquotesingle{} that specify the level of error correction to be encoded. \\
+\hline
+{\em picture} & Accepts the file location of an image to combine \\
+\hline
+{\em colorized} & Accepts a boolean indicating whether or not the output will be in colour \\
+\hline
+{\em contrast} & Accepts an integer indicating the cotrast level \\
+\hline
+{\em brightness} & Accepts an integer indicating the brightness level \\
+\hline
+{\em save\+Name} & Accepts a string containing the desired save name for the finished qr code \\
+\hline
+{\em save\+Directory} & Accpets a string contating the desired save location for the finished qr code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Final binary string representing the data. 
+\end{DoxyReturn}
