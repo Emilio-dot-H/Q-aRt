@@ -159,14 +159,13 @@ template~\citep{RobertsonAndRobertson2012}.
 \subsection{Functional Requirements}
 
 	\paragraph{R1}
-	System must accept image files of the format JPEG, PNG or GIF.
+	System must accept image files of the format JPEG, PNG or GIF for artistic QR code output purposes.
 	\paragraph{R2}
 	System must output a Portable Network Graphic (.png) or Graphics Interchange Format (.gif) file. No other file 
 	formats are acceptable. 
 	\paragraph{R3}
-	System must allow the user to input an ascii string to 
-	encode into a QR Code, and to input of an image, or no image if so 
-	desired, to create an artistic QR Code or a standard QR Code if no image is chosen.
+	Along with the image file input in R1 the system must allow the user to input an ascii string to 
+	encode into an artistic QR Code, if an image file is not provided by the user the system will automatically output a standard QR code.
 	\paragraph{R4}
 	System must generate an appropriately versioned QR code based on the number of 
 	characters in the user input text string (versions 1 to 40) and error 
