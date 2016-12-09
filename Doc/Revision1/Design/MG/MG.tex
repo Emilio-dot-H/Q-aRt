@@ -1,0 +1,294 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{fullpage}
+\usepackage[round]{natbib}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\newcounter{acnum}
+\newcommand{\actheacnum}{AC\theacnum}
+\newcommand{\acref}[1]{AC\ref{#1}}
+
+\newcounter{ucnum}
+\newcommand{\uctheucnum}{UC\theucnum}
+\newcommand{\uref}[1]{UC\ref{#1}}
+
+\newcounter{mnum}
+\newcommand{\mthemnum}{M\themnum}
+\newcommand{\mref}[1]{M\ref{#1}}
+
+\title{SE 3XA3: Software Requirements Specification\\Module Guide}
+
+\author{Team 05, Q-aRt QTs 
+\\Elton Schiott schiotek 
+\\Emilio Hajj hajje 
+\\Liam Duncan duncanla
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+08/11/16 & 1.0 & Basic design information\\
+15/11/16 & 1.1 & Revision 0\\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Anticipated and Unlikely Changes} \label{SecChange}
+
+
+\subsection{Anticipated Changes} \label{SecAchange}
+
+
+\begin{description}
+\item[\refstepcounter{acnum} \actheacnum \label{acInputImage}:] 
+The range of allowed image sizes and image aspect ratios for the input image is expected to change after testing experimenting with different sizes after revision 0.
+
+\item[\refstepcounter{acnum} \actheacnum \label{QRCodeSizes}:] 
+The sizes and selection of levels (number of chars encoded as well as data robustness level) of output QaRt Codes are expected to change with experimentation after revision 0 to deliver the most reliable most convenient elements.
+
+\end{description}
+
+\subsection{Unlikely Changes} \label{SecUchange}
+
+
+\begin{description}
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucAlgorithms}:] 
+The general QR encoding algorithms themselves are not likely to see changes. Therefor within reason parts of the process can be spread across multiple modules with low coupling but which all are aware of the math behind other modules which are part of the process.
+
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] 
+The max number of characters encoded is not likely to change, as our choice was based more on the allowances of the URL standard, rather than the allowances of any QR Code formats.
+
+\end{description}
+
+\section{Module Hierarchy} \label{SecMH}
+
+The system consists of 7 modules. The modules listed below are the modules that will be implemented in our system.
+\begin{description}
+
+ \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Behaviour-Hiding Modules
+
+ \item Constants
+ \item Draw 
+ \item Main 
+ \item Structure 
+ \item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Software Decision Modules
+ \item Data 
+ \item ECC
+ \item Matrix
+\end{description}
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Level 1} & \textbf{Level 2}\\
+\midrule
+
+\multirow{7}{0.3\textwidth}{Behaviour-Hiding Modules} & Input Format (Main.py)\\
+& Library of characters (Constants.py) \\
+& Output Format (Draw.py)\\
+& Encoded Interleaved Data (Structure.py)\\
+\midrule
+
+\multirow{3}{0.3\textwidth}{Software Decision Modules} & {Encoding and Pading Algorithms (Data.py)}\\
+& Conversion Methods (Data.py)\\
+&Matrix Data Structure Format (Matrix.py)\\
+&Codeword Generating Algorithm (ECC.py)\\
+\bottomrule
+
+\end{tabular}
+\caption{Module Hierarchy}
+\label{TblMH}
+\end{table}
+
+\section{Connection Between Requirements and Design} \label{SecConnection}
+
+\paragraph{}
+R3 is satisfied by the Terminal module, which mimics the shell interface of the original project. We also 
+decided to fill R4 through user input of desired size and error correction level.
+This general interface will also cover R9, and will comply with R7.
+
+\paragraph{}
+In the case of input rejection we decided to fulfill the input check as soon as it is 
+recieved. To do this we simply laid
+the light check-code in the Input module.
+This set of checks encompasses solutions to R5, R6, R8 and R15.
+
+\paragraph{}
+To achieve R10 and R14 we minimilized the system by removing the moving-image QR 
+Codes, which made sense considering that our expected application is mostly printed 
+graphics (since a QR Code could be replaced with a linked image on a web page and 
+unclickable digital advertisements are not yet as common). This will not make any 
+remaining creations faster but will certainly cut down on program size.
+
+\section{Module Decomposition} \label{SecMD}
+
+
+\subsection{Behaviour-Hiding Module}
+
+\subsubsection{Main (Composed of Terminal, Input, GUI submodules) (M1)}
+
+\begin{description}
+\item[Secrets:] The format and structure of the input data.
+\item[Services:] Calls all the modules in a specified order, except for the Constants Module.
+\item[Implemented By:] Q-aRt Code
+\end{description}
+
+\subsubsection{Constants Module (M2)}
+
+\begin{description}
+\item[Secrets:] Lists of characters/integers/bits associated to certain classifications (alphanumerics, mode indicators, etc..).
+\item[Services:] Acts as a library or reference tool.
+\item[Implemented By:] Q-aRt Code
+\end{description}
+
+\subsubsection{Draw Module (M3)}
+
+\begin{description}
+\item[Secrets:] The format and structure of the output data.
+\item[Services:] Generates a PNG image file representing the data contained in the QR code matrix.
+\item[Implemented By:] Q-aRt Code
+\end{description}
+
+\subsubsection{Structure Module (M4)}
+
+\begin{description}
+\item[Secrets:] Encoded interleaved data.
+\item[Services:] Interleaves the generated data codewords and error correction codewords by QR code standards before the data is placed in the matrix.
+\item[Implemented By:] Q-aRt Code
+\end{description}
+
+\subsection{Software Decision Module}
+
+\subsubsection{Data Module (M5)}
+
+\begin{description}
+\item[Secrets:] Algorithms used to  encode data bits and pad strings. Methods of conversion from str to bin.
+\item[Services:] Encodes the data bits for a QR code given an input string, version, error correction level, and mode.
+\item[Implemented By:] Q-aRt Code
+\end{description}
+
+\subsubsection{ECC Module (M6)}
+
+\begin{description}
+\item[Secrets:] Algorithms to deduce error correction codewords, divide message polynomials and obtains the result of the 'exclusive OR' operation on the generator/message polynomials.
+\item[Services:] Generates error correction codewords for a given version, level and data string
+\item[Implemented By:] Q-aRt Code
+\end{description}
+
+\subsubsection{Matrix Module (M7)}
+
+\begin{description}
+\item[Secrets:] A matrix containing the final QR Code
+\item[Services:] Places the data in a matrix
+\item[Implemented By:] Q-aRt Code
+\end{description}
+
+\section{Traceability Matrix} \label{SecTM}
+
+
+% the table should use mref, the requirements should be named, use something
+% like fref
+\begin{table}[H]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Req.} & \textbf{Modules}\\
+\midrule
+R1 & M1, M3\\
+R2 & M1, M3\\
+R3 & M1\\
+R4 & M2, M4, M5, M6, M7\\
+R5 & M5\\
+R6 & M1\\
+R7 & M1\\
+R8 & M5\\
+R9 & M1\\
+R10 & M2, M4, M5, M6, M7\\
+R11 & M1, M3\\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Requirements and Modules}
+\label{TblRT}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{AC} & \textbf{Modules}\\
+\midrule
+\\
+AC1 & M1, M3\\ % renders in the pdf fine
+AC2 & M2, M4, M5, M6, M7\\
+UC1 & M2, M4, M5, M6, M7\\
+UC2 & M4\\
+\bottomrule
+\end{tabular}
+\caption{Trace Between Anticipated Changes and Modules}
+\label{TblACT}
+\end{table}
+
+\section{Use Hierarchy Between Modules} \label{SecUse}
+
+Main(//
+Terminal USES Input, GUI\\
+Input USES Data, Structure, ECC, Matrix\\
+GUI USES Input\\
+)//
+Data, Structure, ECC, Matrix USES Constant\\
+
+The process of QR Code generation and image combination is essentially linear 
+and should be completely dictated by the original input. The main method calls 
+all modules other than Constant as libraries in turn to process the element being
+created. Constant is a library of raw data, integers and standard values, that 
+are used for various subtasks throughout the linear process. Because of this, the 
+modular heirarchy percolates at both ends into an Input, GUI, Terminal ("Main" module) funnel at the top and Constants at 
+the bottom, with all other modules on the same center level and all connected 
+to each point of percolation.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
+\caption{Use hierarchy among modules}
+\label{FigUH}
+\end{figure}
+
+%\section*{References}
+
+\bibliographystyle {plainnat}
+\bibliography {MG}
+
+\end{document}
