@@ -1,0 +1,328 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: Software Requirements Specification\\Q-aRt Code}
+
+\author{Team 05, Q-aRt QTs
+		\\ Elton Schiott schiotek
+		\\ Emilio Hajj hajje
+		\\ Liam Duncan duncanla
+}
+
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+2016/10/11 & 1.0 & Revision 0\\
+2016/11/09 & 1.1 & Revision 1\\
+2016/11/15 & 1.2 & Revision 2\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+This document describes the requirements for artistic QR Code generating 
+software.  The template for the Software
+Requirements Specification (SRS) is a subset of the Volere
+template~\citep{RobertsonAndRobertson2012}.  
+
+\section{Project Drivers}
+
+\subsection{The Purpose of the Project}
+
+	\paragraph{}
+		
+		QR Code stamps are not popular, even though they were a source of much 
+		excitement when it was conceived that they could be used to more 
+		conveniently and attractively direct smartphone holders to internet 
+		addresses. QR codes are very practical but do take up much more space 
+		that a written domain and may ruin the balance of a graphic 
+		advertisement or notice. QR Codes may be more attractive to graphic 
+		designers if they could easily and attractively incorporate logos and 
+		colours, or additional information like the domain text itself to add 
+		multiple functions to one graphical article, through a simple tool that 
+		those without technical expertise could use. This open source project 
+		is an exciting chance to explore and contribute to new tools that could 
+		make this great technology more enticing and practical.
+
+\subsection{The Stakeholders}
+	
+\subsubsection{The Client}
+
+	Professor Spencer Smith is the client for this project. %capitalize the first word in a sentence
+	the development for 
+	the project will proceed as per the requirements and constraints specified 
+	in the 3XA3 course.
+
+\subsubsection{The Customers}
+
+	Graphic designers are the preliminary target users of this product. 
+	They should be able to apply the elements output by this program to 
+	condense functions in their graphics and creatively present articles of 
+	the work with a practical twist if this project is successful.
+
+\subsubsection{Other Stakeholders}
+
+	Those who view these graphics should be more likely to engage in the 
+	intention of the graphics.
+	
+	Those who commission the graphic (whether they themselves be the 
+	designer) should see a higher rate of views engaging their intentions 
+	for the graphics.
+
+\subsection{Mandated Constraints}
+
+	The system should run on a (at least one) Windows 10 computer. Other operating systems are not required but are 
+	expected to be applicable. The system must be completed by December 2016.
+
+\subsection{Naming Conventions and Terminology}
+
+		\paragraph{QR Code}
+		
+			 Similar to a barcode, a machine readable array of black 
+			and white squares typically used to store URLs.
+			\paragraph{URL}
+			 Uniform Resource Locator. An address to a resource on the 
+			internet.
+			\paragraph{Version}
+			 The size of a QR code, version 1 being 21 by 21 pixels, up 
+			to version 40 which has 177 by 177 pixels.
+			\paragraph{Error Correction Level}
+			 A process that encodes bytes into the QR 
+			code that allow the reader to determine if the data was read 
+			correctly, and can be used to correct any errors that prevented it 
+			from being read correctly.
+
+\subsection{Relevant Facts and Assumptions}
+
+	It is assumed that the user will have basic skills in the use of computers 
+	especially in regards to file browsers.
+
+\section{Functional Requirements}
+
+\subsection{The Scope of the Work and the Product}
+
+\subsubsection{The Context of the Work}
+	
+	The majority of any population that is regarded a target market of any 
+	particular advertising campaign has a smartphone with the capability to 
+	decode QR codes. This allows for those interested in an advertisement to 
+	immediately learn more about the advertised product of service, increasing 
+	the potential effectiveness of the advertisement.
+	
+\subsubsection{Work Partitioning}
+
+	The partitioning of the work on the project is illustrated in the group's 
+	Gantt chart.
+
+\subsubsection{Individual Product Use Cases}
+
+	\paragraph{}
+	A graphic designer has a logo on a poster, and wants to make it the only 
+	focus, but he is also tasked to put a link on the poster. Instead he takes 
+	the logo and puts it into a qr code, and makes that the centre of the 
+	poster.
+	\paragraph{}
+	 A business owner is making a sign and wants to link to their website, but 
+	 doesn't want to have more text on the sign to keep it minimalistic and 
+	 doesn't want to disrupt the colour, so he uses the system to make a qr 
+	 code of the stock colour so it blends with the sign and maintains style.
+	
+
+\subsection{Functional Requirements}
+
+	\paragraph{R1}
+	System must accept image files of the format JPEG, PNG or GIF for artistic QR code output purposes.
+	\paragraph{R2}
+	System must output a Portable Network Graphic (.png) or Graphics Interchange Format (.gif) file. No other file 
+	formats are acceptable. 
+	\paragraph{R3}
+	Along with the image file input in R1 the system must allow the user to input an ascii string to 
+	encode into an artistic QR Code, if an image file is not provided by the user the system will automatically output a standard QR code.
+	\paragraph{R4}
+	System must generate an appropriately versioned QR code based on the number of 
+	characters in the user input text string (versions 1 to 40) and error 
+	correction level (L,M,Q, or H).
+	\paragraph{R5}
+	System must not allow the user to enter generate with a string that contains unsupported 
+	characters for the alphanumeric mode of QR encoding, and must prevent the 
+	user from entering a string of more than MAXIMUM characters.
+	\paragraph{R6}	
+	When a non compatible file is chosen, there must be a warning message. The 
+	warning explains the allowed formats and only allows acceptance. The 
+	acceptance brings the system back to the original state.
+	
+	
+
+\section{Non-functional Requirements}
+
+\subsection{Look and Feel Requirements}
+	
+	 \paragraph{R7}The system must have a simple interface.
+	
+	
+\subsection{Usability and Humanity Requirements}
+
+    \paragraph{R8}
+	The system must notify the user when an invalid input is entered for either 
+	the text or image.
+    \paragraph{R9}
+	the system must prompt the user for an appropriate input to 
+	remove confusion about the requested input for the field.
+
+\subsection{Performance Requirements}
+
+	\paragraph{R10}
+	The system will output the specified QR code within 5 seconds.
+	\paragraph{R11}
+	The output of the system must be recognizable as the original images. A 
+	viewer must be able to distinguish the QR code image that represents one 
+	input image from another QR code image which represents an input that is 
+	different. Here	different refers to a significant difference in colour 
+	palate, distribution of high activity areas in the input image, and text 
+	which differs by more than two letters and significantly in format. Here 
+	high activity refers to	a distinct logo, or a clearly visible object or 
+	subject in that area.
+
+\subsection{Operational and Environmental Requirements}
+	
+	\paragraph{R12}
+	The system will be used on a desktop or laptop computer.
+	\paragraph{R13}
+	The system will be used with a Python interpreter.
+	
+\subsection{Maintainability and Support Requirements}
+
+	\paragraph{R14}
+	The system will be small enough to allow for easy replacement of the system 
+	with updated versions.
+	\paragraph{R15}
+	The system will produce meaningful messages when the user inputs incorrect 
+	input to allow the user to resolve issues.
+
+\subsection{Security Requirements}
+
+	None. The user encodes private messages or images at their own risk.
+
+\subsection{Cultural Requirements}
+
+	None. Any images used to generated QR codes are the responsibility of the 
+	user.
+
+\subsection{Legal Requirements}
+
+	\paragraph{R16}
+	The development of the system will follow the guidelines of GNU General 
+	Public License Version 3.
+
+\subsection{Health and Safety Requirements}
+
+	\paragraph{R17}
+	The system must not cause any critical failure of the computer it is run on 
+	that may pose a risk to the health and safety of the user.
+
+\section{Project Issues}
+
+\subsection{Open Issues}
+
+	Not all group members yet have an in depth understanding of every process which
+	is used in the complex proccess of creating a working QR Code. We hope to 
+	fill these remaining spaces in knowledge during the revision process.
+
+\subsection{Off-the-Shelf Solutions}
+
+	Documentation on the encoding process is readily available, as are numerous 
+	open source examples of QR encoders. These will make it possible to attain 
+	the required knowledge to complete the implementation. The libraries will 
+	also be useful for the implementation of the software as they allow 
+	components such as image IO not to be redeveloped as they are basic and not 
+	part of the main purpose of the software.
+
+\subsection{New Problems}
+
+	None.
+
+\subsection{Tasks}
+
+	Final testing for robustness and possible shortcoming is underway.
+
+\subsection{Migration to the New Product}
+
+	This project is a redevelopment of a current existing product, and is a 
+	portable solution. As such, there are no issues in migration to the new 
+	product.
+
+\subsection{Risks}
+
+	As the project is mostly centered around one algorithm for the generation 
+	of QR codes, and image quality is an important requirement for the output 
+	of the system, there are risks involving difficulty in testing the product. 
+
+\subsection{Costs}
+
+	The product may not meet requirements adequately if components of the 
+	software are unable to be tested well. This will result in an incomplete 
+	solution for the project, as there may be many untested cases where the 
+	software fails.
+
+\subsection{User Documentation and Training}
+
+	The software as intended will not require extensive training if any, as the 
+	only knowledge required to use the software is basic knowledge of the file 
+	explorer to select input images, as well as to retrieve generated QR codes, 
+	and common knowledge on URLs. Documentation is an important part of the 
+	redevelopment of this project and as such there will be an ample amount of 
+	documentation that will be available to the user in the less likely case that it is required.
+
+\subsection{Waiting Room}
+	
+	N/A
+	
+\subsection{Ideas for Solutions}
+
+	The algorithm must be understood well and modularized to allow for unit 
+	testing, and the requirements for acceptable image quality must be 
+	well-defined before testing.
+
+\bibliographystyle{plainnat}
+
+\bibliography{SRS}
+
+\newpage
+
+\section{Appendix}
+
+
+\subsection{Symbolic Parameters}
+
+MAXIMUM - 4296 (the maximum capacity of the largest QR code, version 40-L)
+
+
+\end{document}
