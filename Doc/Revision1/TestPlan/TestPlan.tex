@@ -1,0 +1,330 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+\usepackage[round]{natbib}
+
+\title{SE 3XA3: Test Plan\\Q-aRt Code}
+
+\author{Team 05, Q-aRt QTs
+		\\ Elton Schiott schiotek
+		\\ Emilio Hajj hajje
+		\\ Liam Duncan duncanla
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\listoftables
+\listoffigures
+
+No figures at this time.
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+03/11/16 & 1.0 & System and Proof of Concept tests present.\\
+
+03/11/16 & 2.0 & Revisited on project completion (rev1).\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{General Information}
+
+\subsection{Purpose}
+	This document is an outline of the procedures intended to be used to verify 
+	that the software project currently under development, Q-aRt Code satisfies 
+	requirements as specified in the SRS document. This plan and the majority 
+	of the tests described within have been constructed prior to the completion 
+	of the project implementation. As such, the intention of the document is to 
+	be used as a reference during the implementation of the software, and 
+	during testing.
+\subsection{Scope}
+	The majority of the project is encoding binary strings from the input data, 
+	therefore, the scope of the testing for this software will largely be 
+	ensuring correctness of these generated strings, but also includes 
+	readability of the final generated QR code, as well as image quality.
+\subsection{Acronyms, Abbreviations, and Symbols}
+	
+\begin{table}[hbp]
+\caption{\textbf{Table of Abbreviations}} \label{Table}
+
+\begin{tabularx}{\textwidth}{p{3cm}X}
+\toprule
+\textbf{Abbreviation} & \textbf{Definition} \\
+\midrule
+QR Code & Quick Response Code (image-based data encoding)\\
+URL & Uniform Resource Locator (web address)\\
+PNG & Portable Network Graphic (most ubiquitous digital image format)\\
+\bottomrule
+\end{tabularx}
+
+\end{table}
+
+\begin{table}[!htbp]
+\caption{\textbf{Table of Definitions}} \label{Table}
+
+\begin{tabularx}{\textwidth}{p{3cm}X}
+\toprule
+\textbf{Term} & \textbf{Definition}\\
+\midrule
+No Outstanding Terms & N/A\\
+\bottomrule
+\end{tabularx}
+
+\end{table}	
+
+\subsection{Overview of Document}
+
+\section{Plan}
+	
+\subsection{Software Description}
+	The software under development for this project, Q-aRt Code, is a QR code 
+	generator that has the added functionality of creating artistic QR codes. 
+	The modular decomposition of the software is as follows:
+	\begin{itemize}  
+		\item Encode binary strings from the input data .
+		\item Generate error correction codewords from the binary strings.
+		\item Structure data and error correction binary strings, including 
+		interleaving.
+		\item Create a matrix using the generated data according to QR code 
+		standards.
+		\item Combine generated QR Code with input image to create artistic QR 
+		code.
+	\end{itemize}
+\subsection{Test Team}
+	Each member of the test team will be responsible for both the creation of 
+	tests and their execution. The members of the test team are as follows:
+	\begin{itemize}
+		\item Elton Schiott
+		\item Emilio Hajj
+		\item Liam Duncan
+	\end{itemize}
+\subsection{Automated Testing Approach}
+	All automated testing will be done on the modular level. 
+    Since the system is closed from Run to output generation, manual interpretation by a person will be used for system testing.
+
+\subsection{Testing Tools}
+	Unit testing will be conducted using the Python unittest unit testing framework.
+	For QR Code funtional validation, the application 'QR Code Reader' by developer 'Scan' is used.
+	Google Play Store: \url{https://play.google.com/store/apps/details?id=me.scan.android.client&hl=en}
+\subsection{Testing Schedule}
+		
+See Gantt Chart at the following url:
+\url{https://gitlab.cas.mcmaster.ca/schiotek/Q-aRt_Code/blob/master/ProjectSchedule/GanttChartQ.gan}
+
+\section{System Test Description}
+	
+\subsection{Tests for Functional Requirements}
+
+\subsubsection{Functionality and Fidelity of QR Encoder}
+		
+\paragraph{QR Scanning App}
+
+\begin{enumerate}
+
+\item{Retrieve URL\\}
+
+Type: Functional, Dynamic.
+					
+Initial State: Output on hand.
+					
+Input: Test string.
+					
+Output: Image which can be scanned to produce originally encoded URL with the designated tool.
+					
+How test will be performed: With a QR Scanning Application.
+					
+\item{Max. Character URL Retrieval \\}
+
+Type: Functional, Dynamic.
+			
+Initial State: Output on hand.
+					
+Input: Max length string.
+					
+Output: Image which can be scanned to produce originally encoded URL with the designated tool.  
+					
+How test will be performed: With a QR Scanning Application.
+
+
+\item{Empty String\\}
+
+Type: Functional, Dynamic.
+					
+Initial State: Output on hand.
+					
+Input: Empty string.
+					
+Output: No Output, displays "Empty String" message.
+					
+How test will be performed: Run program.
+
+
+\item{URL with greater than max. characters\\}
+
+Type: Functional, Dynamic.
+					
+Initial State: Run.
+					
+Input: Test string larger than max string size.
+					
+Output: No Output, displays error message.
+					
+How test will be performed: Run program.
+
+\end{enumerate}
+
+\subsubsection{Input Handling}
+
+\begin{enumerate}
+
+\item{ASCII not compatible with URL\\}
+
+Type: Functional, Dynamic.
+					
+Initial State: Run.
+					
+Input: Characters in run arguement, no image.
+					
+Output: No Output, displays error message.
+                    
+How test will be performed: Run program.
+
+\item{Attempt to paste chars not within the accepted range: in this case Kanji, which the system will not handle\\}
+
+Type: Functional, Dynamic.
+					
+Initial State: Run.
+					
+Input: Characters in run arguement, no image.
+					
+Output: No Output, displays error message.
+					
+How test will be performed: Run program.
+
+/end{enumerate}
+
+\subsection{Tests for Nonfunctional Requirements}
+
+\subsubsection{Visual and Aesthetic Tests}
+
+\begin{enumerate}
+
+\item{Colour Fidelity\\}
+
+Type: Non-Functional, Dynamic.
+					
+Initial State: Run.
+					
+Input/Condition: Standard URL, unspecific single colour square image.
+					
+Output/Result: QR code with much of its content the same colour as the square image.
+					
+How test will be performed: An on-screen hex eyedrop tool will be used to compare the input colour image with elements of the output image.
+					
+\item{Visual Text Legibility\\}
+
+Type: Non-Functional, Dynamic, Manual.
+					
+Initial State: Run.
+					
+Input: Display/View of QR Code png, square image of some text, version number asserted 20 (median version).
+					
+Output: QR code with ``artistic'' text appearance.
+					
+How test will be performed: Member visually inspects output PNG with text chosen by another member, writes down the text they see and compares it to entered text.
+
+\end{enumerate}
+
+\subsubsection{Performance}
+
+item{Reasonable speed\\}
+
+Type: Non-Functional, Dynamic, Manual.
+					
+Initial State: Run. 
+					
+Input: Short URL, \#808080 grey square image.
+					
+Output: QR code image with ``artistic'' text integrated.
+					
+How test will be performed: ``Create'' button pressed (run program), user will wait for output and rate runtime "too long" or "not too long".
+
+\end{enumerate}
+
+\section{Tests for Proof of Concept}
+
+\subsection{Functional Testing}
+
+\begin{enumerate}
+
+\item{Maximum String Test\\}
+
+Type: Functional, Dynamic
+					
+Initial State: Run.
+					
+Input: Max char (13 for the Proof of Concept specifically) input string as shell argument.
+					
+Output: QR code PNG image.
+					
+How test will be performed: Max char string will be input on shell prompt, and the output PNG will be tested with an external scanning app to retrieve the original string.
+					
+\item{Empty String\\}
+
+Type: Functional, Dynamic
+					
+Initial State: Run.
+					
+Input: Empty string input string as shell argument.
+					
+Output: Error message.
+					
+How test will be performed: Empty string will be input on shell prompt, and no output should be created, with a warning message.
+
+\end{enumerate}
+
+\subsection{Non-Functional Testing}
+
+The Proof of Concept is purely focused on functional requirement testing.
+	
+\section{Comparison to Existing Implementation}	
+
+A comparison of system tests to the existing implementation is immediately availible since we can input identical strings and images, and analyze the output files with the same set of QR Code scanners.
+
+\bibliographystyle{plainnat}
+
+\bibliography{SRS}
+
+\newpage
+
+\section{Appendix}
+
+No additional information to show.
+
+\subsection{Symbolic Parameters}
+
+None used.
+
+\end{document}
